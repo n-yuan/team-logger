@@ -48,7 +48,6 @@ const AddMemberModal = () => {
             </label>
           </div>
         </div>
-        
       </div>
       <div className="modal-footer">
         <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">
