@@ -6,7 +6,7 @@ const AddMemberModal = () => {
   const [lastName, setLastName] = useState("");
 
   const onSubmit = () => {
-    if (firstName == "" || lastName == "") {
+    if (firstName === "" || lastName === "") {
       M.toast({ html: "Please enter the first and last name" });
     } else {
       console.log(firstName, lastName);

@@ -7,7 +7,7 @@ const AddLogModal = () => {
   const [member, setMember] = useState("");
 
   const onSubmit = () => {
-    if (message == "" || member == "") {
+    if (message === "" || member === "") {
       M.toast({ html: "Please enter a message and member" });
     } else {
       console.log(message, member, attention);
