@@ -22,11 +22,18 @@
       "member": "Sam Smith3"
     },
     {
-      "message": "test",
+      "id": 4,
+      "message": "Changed hard drive on workstation 004",
       "attention": false,
-      "member": "Yiping Niu",
-      "data": "2020-01-20T12:12:26.620Z",
-      "id": 4
+      "date": "05-02-2019",
+      "member": "Sam Smith4"
+    },
+    {
+      "id": 5,
+      "message": "Changed hard drive on workstation 005",
+      "attention": true,
+      "date": "05-02-2019",
+      "member": "Sam Smith5"
     }
   ],
   "members": [
