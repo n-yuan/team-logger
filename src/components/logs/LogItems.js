@@ -1,8 +1,13 @@
 import React from "react";
 import Moment from "react-moment";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { deleteLog } from "../../actions/logActions";
 
-const LogItems = ({ log }) => {
+const LogItems = ({ log, deleteLog }) => {
+  const onDelete = () => {
+    deleteLog(log.id);
+  }
   return (
     <li className="collection-item">
       <div>
@@ -18,7 +23,7 @@ const LogItems = ({ log }) => {
           Last updated by <span className="black-text">{log.member}</span> on{" "}
           <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
-        <a href="!#" className="secondary-content">
+        <a href="!#" onClick={onDelete} className="secondary-content">
           <i className="material-icons grey-text">delete</i>
         </a>
       </div>
@@ -27,7 +32,8 @@ const LogItems = ({ log }) => {
 };
 
 LogItems.propTypes = {
-  log: PropTypes.object.isRequired
+  log: PropTypes.object.isRequired,
+  deleteLog: PropTypes.func.isRequired
 };
 
-export default LogItems;
+export default connect(null, { deleteLog })(LogItems);
