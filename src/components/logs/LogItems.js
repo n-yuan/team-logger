@@ -3,10 +3,12 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { deleteLog } from "../../actions/logActions";
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const LogItems = ({ log, deleteLog }) => {
   const onDelete = () => {
     deleteLog(log.id);
+    M.toast({html:'Log Deleted'});
   }
   return (
     <li className="collection-item">
