@@ -1,11 +1,25 @@
 {
   "logs": [
     {
-      "id": 3,
-      "message": "dfjksdfhjsdhfk. 003",
+      "message": "sam smith",
       "attention": true,
-      "member": "Sam Smith3",
-      "date": "2020-09-16T13:53:46.979Z"
+      "member": "Yiping Niu",
+      "date": "2020-09-16T14:18:44.402Z",
+      "id": 6
+    },
+    {
+      "message": "sara white",
+      "attention": false,
+      "member": "Nan Yuan",
+      "date": "2020-09-16T14:19:00.362Z",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "message": "joen doe",
+      "attention": false,
+      "member": "Ryan Niu",
+      "date": "2020-09-16T14:19:37.710Z"
     }
   ],
   "members": [
