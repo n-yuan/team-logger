@@ -1,39 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 001",
-      "attention": false,
-      "date": "03-02-2019",
-      "member": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Changed hard drive on workstation 002",
-      "attention": true,
-      "date": "04-02-2019",
-      "member": "Sam Smith2"
-    },
-    {
       "id": 3,
-      "message": "Changed hard drive on workstation 003",
-      "attention": false,
-      "date": "05-02-2019",
-      "member": "Sam Smith3"
-    },
-    {
-      "id": 4,
-      "message": "Changed hard drive on workstation 004",
-      "attention": false,
-      "date": "05-02-2019",
-      "member": "Sam Smith4"
-    },
-    {
-      "id": 5,
-      "message": "Changed hard drive on workstation 005",
+      "message": "dfjksdfhjsdhfk. 003",
       "attention": true,
-      "date": "05-02-2019",
-      "member": "Sam Smith5"
+      "member": "Sam Smith3",
+      "date": "2020-09-16T13:53:46.979Z"
     }
   ],
   "members": [

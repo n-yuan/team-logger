@@ -17,7 +17,7 @@ const AddLogModal = ({ addLog }) => {
         message,
         attention,
         member,
-        data: new Date()
+        date: new Date()
       };
 
       addLog(newLog);
