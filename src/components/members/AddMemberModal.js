@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addMember } from "../../actions/memberActions";
+import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const AddMemberModal = () => {
+const AddMemberModal = ({ addMember }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -9,7 +12,9 @@ const AddMemberModal = () => {
     if (firstName === "" || lastName === "") {
       M.toast({ html: "Please enter the first and last name" });
     } else {
-      console.log(firstName, lastName);
+      addMember({ firstName, lastName });
+
+      M.toast({ html: `${firstName} ${lastName} was added as a tech` });
 
       //Clear Fields
       setFirstName("");
@@ -27,7 +32,7 @@ const AddMemberModal = () => {
               type="text"
               name="firstName"
               value={firstName}
-              onChange={e => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <label htmlFor="firstName" className="active">
               First Name
@@ -41,7 +46,7 @@ const AddMemberModal = () => {
               type="text"
               name="lastName"
               value={lastName}
-              onChange={e => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <label htmlFor="lastName" className="active">
               Last Name
@@ -50,7 +55,11 @@ const AddMemberModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">
+        <a
+          href="#!"
+          onClick={onSubmit}
+          className="modal-close waves-effect blue btn"
+        >
           Enter
         </a>
       </div>
@@ -58,4 +67,7 @@ const AddMemberModal = () => {
   );
 };
 
-export default AddMemberModal;
+AddMemberModal.propTypes = {
+  addMember: PropTypes.func.isRequired,
+};
+export default connect(null, { addMember })(AddMemberModal);

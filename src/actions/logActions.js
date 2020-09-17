@@ -37,36 +37,9 @@ export const getLogs = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
-};
-
-//Delete log from server
-export const deleteLog = (id) => async (dispatch) => {
-  try {
-    setLoading();
-    const res = await fetch(`/logs/${id}`, {
-      method: "DELETE",
-    });
-
-    dispatch({
-      type: DELETE_LOG,
-      payload: id,
-    });
-  } catch (err) {
-    dispatch({
-      type: LOGS_ERROR,
-      payload: err.response.data,
-    });
-  }
-};
-
-//Set loading to true
-export const setLoading = () => {
-  return {
-    type: SET_LOADING,
-  };
 };
 
 // Add new log
@@ -90,9 +63,44 @@ export const addLog = (log) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
+};
+
+//Delete log from server
+export const deleteLog = (id) => async (dispatch) => {
+  try {
+    setLoading();
+    const res = await fetch(`/logs/${id}`, {
+      method: "DELETE",
+    });
+
+    dispatch({
+      type: DELETE_LOG,
+      payload: id,
+    });
+  } catch (err) {
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err.response.statusText,
+    });
+  }
+};
+
+//Set current log
+export const setCurrent = (log) => {
+  return {
+    type: SET_CURRENT,
+    payload: log,
+  };
+};
+
+//Clear current log
+export const clearCurrent = () => {
+  return {
+    type: CLEAR_CURRENT,
+  };
 };
 
 // Update log on server
@@ -120,21 +128,6 @@ export const updateLog = (log) => async (dispatch) => {
   }
 };
 
-//Set current log
-export const setCurrent = (log) => {
-  return {
-    type: SET_CURRENT,
-    payload: log,
-  };
-};
-
-//Clear current log
-export const clearCurrent = () => {
-  return {
-    type: CLEAR_CURRENT,
-  };
-};
-
 //Search logs
 export const searchLogs = (text) => async (dispatch) => {
   try {
@@ -149,7 +142,14 @@ export const searchLogs = (text) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
+};
+
+//Set loading to true
+export const setLoading = () => {
+  return {
+    type: SET_LOADING,
+  };
 };

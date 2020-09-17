@@ -1,34 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getMembers } from "../../actions/memberActions";
+import PropTypes from "prop-types";
 import MemberItem from "./MemberItem";
 
-const MemberListModal = () => {
-  const [members, setMembers] = useState([]);
-  const [loading, setLoading] = useState(false);
-
+const MemberListModal = ({ getMembers, member: { members, loading } }) => {
   useEffect(() => {
     getMembers();
+
     // eslint-disable-next-line
   }, []);
-
-  const getMembers = async () => {
-    setLoading(true);
-    const res = await fetch("/members");
-    const data = await res.json();
-
-    setMembers(data);
-    setLoading(false);
-  };
 
   return (
     <div id="member-list-modal" className="modal">
       <div className="modal-content">
         <h4>Member List</h4>
         <ul className="collection">
-          {!loading && members.map(member => <MemberItem member={member} key={member.id} />)}
+          {!loading &&
+            members !== null &&
+            members.map((member) => (
+              <MemberItem member={member} key={member.id} />
+            ))}
         </ul>
       </div>
     </div>
   );
 };
 
-export default MemberListModal;
+MemberListModal.propTypes = {
+  member: PropTypes.object.isRequired,
+  getMembers: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  member: state.member,
+});
+
+export default connect(mapStateToProps, { getMembers })(MemberListModal);

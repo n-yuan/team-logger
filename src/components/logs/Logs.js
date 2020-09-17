@@ -1,4 +1,4 @@
-import React, { useEffect, Profiler } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import LogItem from "./LogItems";
 import Preloader from "../layout/Preloader";
