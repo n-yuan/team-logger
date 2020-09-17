@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteMember } from "../../actions/memberActions";
 import M from "materialize-css/dist/js/materialize.min.js";
-
 import PropTypes from "prop-types";
 
 const MemberItem = ({ member, deleteMember }) => {
@@ -24,8 +23,6 @@ const MemberItem = ({ member, deleteMember }) => {
 
 MemberItem.propTypes = {
   member: PropTypes.object.isRequired,
-};
-MemberItem.propTypes = {
   deleteMember: PropTypes.func.isRequired,
 };
 

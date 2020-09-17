@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MemberSelectOptions from "../members/MemberSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -64,10 +65,7 @@ const EditLogModal = ({ current, updateLog }) => {
               <option disabled value="">
                 Select Member
               </option>
-              <option value="Yiping Niu">Yiping Niu</option>
-              <option value="Nan Yuan">Nan Yuan</option>
-              <option value="Ryan Niu">Ryan Niu</option>
-              <option value="Arissa Yuan">Arissa Yuan</option>
+              <MemberSelectOptions />
             </select>
           </div>
         </div>
