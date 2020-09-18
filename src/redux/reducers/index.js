@@ -6,5 +6,5 @@ import authReducer from "./authReducer";
 export default combineReducers({
   log: logReducer,
   member: memberReducer,
-  
+  auth: authReducer,
 });
