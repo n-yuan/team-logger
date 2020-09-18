@@ -10,8 +10,6 @@ import {
   CONTACT_ERROR,
 } from "./types";
 
-//Load User
-
 //Register User
 
 //Login User
@@ -25,13 +23,30 @@ export const login = (formData) => async (dispatch) => {
       },
     });
     const data = await res.json();
-    console.log(data);
-
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data,
     });
-    // loadUser();
+
+    // GET User data
+    if (data.token) {
+      try {
+        const res = await fetch(
+          "https://team-logger-api.herokuapp.com/api/auth",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "x-auth-token": localStorage.token,
+            },
+          }
+        );
+        const data = await res.json();
+        dispatch({ type: USER_LOADED, payload: data });
+      } catch (error) {
+        dispatch({ type: AUTH_ERROR });
+      }
+    }
   } catch (err) {
     console.log("loginerror");
     dispatch({
@@ -40,6 +55,12 @@ export const login = (formData) => async (dispatch) => {
     });
   }
 };
+
 //Logout
+export const logout = () => (dispatch) => dispatch({ type: LOGOUT });
 
 //Clear Errors
+export const clearErrors = () => (dispatch) =>
+  dispatch({
+    type: CLEAR_ERRORS,
+  });
