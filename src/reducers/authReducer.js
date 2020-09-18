@@ -8,7 +8,7 @@ import {
   LOGOUT,
   CLEAR_ERRORS,
   CONTACT_ERROR,
-} from "./types";
+} from "../actions/types";
 
 const initialState = {
   token: localStorage.getItem("token"),

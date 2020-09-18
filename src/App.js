@@ -1,13 +1,14 @@
 import React, { Fragment, useEffect } from "react";
-import SearchBar from "./components/layout/SearchBar";
-import Logs from "./components/logs/Logs";
-import AddBtn from "./components/layout/AddBtn";
-import AddLogModal from "./components/logs/AddLogModal";
-import EditLogModal from "./components/logs/EditLogModal";
-import AddMemberModal from "./components/members/AddMemberModal";
-import MemberListModal from "./components/members/MemberListModal";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import { Provider } from "react-redux";
 import store from "./store";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import "./styles/style.css";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -20,17 +21,16 @@ const App = () => {
   });
   return (
     <Provider store={store}>
-      <Fragment>
-        <SearchBar />
-        <div className="container">
-          <AddBtn />
-          <Logs />
-          <AddLogModal />
-          <EditLogModal />
-          <AddMemberModal />
-          <MemberListModal />
-        </div>
-      </Fragment>
+      <Router>
+        <Switch>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+
+        {/* Main Page */}
+      </Router>
     </Provider>
   );
 };
