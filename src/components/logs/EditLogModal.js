@@ -3,7 +3,7 @@ import MemberSelectOptions from "../members/MemberSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
-import { updateLog } from "../../actions/logActions";
+import { updateLog } from "../../redux/actions/logActions";
 
 const EditLogModal = ({ current, updateLog }) => {
   const [message, setMessage] = useState("");

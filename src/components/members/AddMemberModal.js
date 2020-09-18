@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addMember } from "../../actions/memberActions";
+import { addMember } from "../../redux/actions/memberActions";
 import PropTypes from "prop-types";
 import M from "materialize-css/dist/js/materialize.min.js";
 

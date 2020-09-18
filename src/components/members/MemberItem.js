@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteMember } from "../../actions/memberActions";
+import { deleteMember } from "../../redux/actions/memberActions";
 import M from "materialize-css/dist/js/materialize.min.js";
 import PropTypes from "prop-types";
 

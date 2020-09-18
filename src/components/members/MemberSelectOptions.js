@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getMembers } from "../../actions/memberActions";
+import { getMembers } from "../../redux/actions/memberActions";
 import PropTypes from "prop-types";
 
 const MemberSelectOptions = ({ getMembers, member: { members, loading } }) => {

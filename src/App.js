@@ -3,7 +3,7 @@ import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./redux/store";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
