@@ -11,6 +11,29 @@ import {
 } from "./types";
 
 //Register User
+export const register = (formData) => async (dispatch) => {
+  try {
+    const res = await fetch("https://team-logger-api.herokuapp.com/api/users", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token,
+      },
+    });
+    const data = await res.json();
+    console.log(data);
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: REGISTER_FAIL,
+      payload: err.response.data.msg,
+    });
+  }
+};
 
 //Login User
 export const login = (formData) => async (dispatch) => {
