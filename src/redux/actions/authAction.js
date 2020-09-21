@@ -18,7 +18,6 @@ export const register = (formData) => async (dispatch) => {
       body: JSON.stringify(formData),
       headers: {
         "Content-Type": "application/json",
-        "x-auth-token": localStorage.token,
       },
     });
 
@@ -28,9 +27,32 @@ export const register = (formData) => async (dispatch) => {
       type: REGISTER_SUCCESS,
       payload: data,
     });
+
+    // GET User data
+    if (data.token) {
+      try {
+        const res = await fetch(
+          "https://team-logger-api.herokuapp.com/api/auth",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "x-auth-token": localStorage.token,
+            },
+          }
+        );
+        const data = await res.json();
+        console.log(data)
+        dispatch({ type: USER_LOADED, payload: data });
+      } catch (error) {
+        dispatch({ type: AUTH_ERROR });
+      }
+    }
+    
   } catch (err) {
+    console.log("loginerror");
     dispatch({
-      type: REGISTER_FAIL,
+      type: LOGIN_FAIL,
       payload: err.response.data.msg,
     });
   }
