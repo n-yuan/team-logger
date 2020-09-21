@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteMember } from "../../redux/actions/memberActions";
-import M from "materialize-css/dist/js/materialize.min.js";
 import PropTypes from "prop-types";
 
 const MemberItem = ({ member, deleteMember }) => {
   const onDelete = () => {
     deleteMember(member._id);
-    M.toast({ html: "Member Deleted" });
+    
   };
   return (
     <li className="collection-item">

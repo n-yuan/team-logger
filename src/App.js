@@ -9,11 +9,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Landing from "./pages/Landing";
 import "./styles/style.css";
 
-import "materialize-css/dist/css/materialize.min.css";
 
-import "./App.css";
+// import "./App.css";
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
           <Route exact path="/about" component={About} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/landing" component={Landing} />
         </Switch>
 
         {/* Main Page */}

@@ -6,14 +6,11 @@ import AddMemberModal from "../components/members/AddMemberModal";
 import MemberListModal from "../components/members/MemberListModal";
 import SearchBar from "../components/layout/SearchBar";
 import Logs from "../components/logs/Logs";
-import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css/dist/js/materialize.min.js";
+
+
 
 const Home = () => {
-  useEffect(() => {
-    //Init Materialize JS
-    M.AutoInit();
-  });
+  
   return (
     <Fragment>
       <SearchBar />

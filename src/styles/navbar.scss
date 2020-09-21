@@ -1,0 +1,70 @@
+@import "./variables.scss";
+
+.navbar-brand {
+  color: $primaryColor;
+}
+.navbar-toggler {
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+  }
+  .custom-toggler-icon {
+    color: $primaryColor;
+    border: none;
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.nav-link {
+  color: $primaryColor;
+  margin: 5px 35px;
+  font-size: 20px;
+}
+
+.nav-btn {
+  border: 2px solid $primaryColor;
+  background-color: Transparent;
+  border-radius: 25px;
+  padding: 0 20px;
+  font-size: 15px;
+  color: $primaryColor;
+  height: 40px;
+  margin: 10px;
+}
+
+h1 {
+  color: $primaryColor;
+  font-weight: 600;
+  font-size: 45px;
+  margin-top: 140px;
+}
+
+p {
+  color: #a1c4e3;
+  margin-right: 60px;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.intro-btn-container {
+  width: 100%;
+
+  .intro-btn {
+    border: 2px solid $primaryColor;
+    background-color: Transparent;
+    border-radius: 25px;
+    padding: 5px 20px;
+    font-size: 15px;
+    color: $primaryColor;
+    margin-top: 30px;
+  }
+}
+
+.landing-image {
+  margin-top: 80px;
+}

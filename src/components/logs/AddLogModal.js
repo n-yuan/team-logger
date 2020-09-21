@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLog } from "../../redux/actions/logActions";
-import M from "materialize-css/dist/js/materialize.min.js";
 import MemberSelectOptions from "../members/MemberSelectOptions";
 
 const AddLogModal = ({ addLog }) => {
@@ -12,7 +11,7 @@ const AddLogModal = ({ addLog }) => {
 
   const onSubmit = () => {
     if (message === "" || member === "") {
-      M.toast({ html: "Please enter a message and member" });
+     
     } else {
       const newLog = {
         message,
@@ -23,7 +22,7 @@ const AddLogModal = ({ addLog }) => {
 
       addLog(newLog);
 
-      M.toast({ html: `Log added by${member}` });
+      
 
       //Clear Fields
       setMessage("");

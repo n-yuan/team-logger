@@ -7,7 +7,6 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   CLEAR_ERRORS,
-  CONTACT_ERROR,
 } from "./types";
 
 //Register User
@@ -49,7 +48,7 @@ export const register = (formData) => async (dispatch) => {
     
   } catch (err) {
     dispatch({
-      type: LOGIN_FAIL,
+      type: REGISTER_FAIL,
       payload: err.response.data.msg,
     });
   }

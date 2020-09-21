@@ -1,0 +1,32 @@
+.register-form-item {
+  font-size: 16px;
+  color: grey;
+}
+
+input {
+  width: 100%;
+  border-radius: 25px;
+  padding: 6px;
+  border: 1px rgba(128, 128, 128, 0.199) solid;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
+}
+
+.register-form-container {
+  padding:0 50px;
+  width: 100%;
+  .register-form-header {
+    margin-top: 85px;
+  }
+}
+
+.register-form-btn {
+  border: 2px solid $primaryColor;
+  background-color: Transparent;
+  border-radius: 25px;
+  padding: 5px 20px;
+  font-size: 15px;
+  color: $primaryColor;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+}

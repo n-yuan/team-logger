@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MemberSelectOptions from "../members/MemberSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import M from "materialize-css/dist/js/materialize.min.js";
+
 import { updateLog } from "../../redux/actions/logActions";
 
 const EditLogModal = ({ current, updateLog }) => {
@@ -20,7 +20,7 @@ const EditLogModal = ({ current, updateLog }) => {
 
   const onSubmit = () => {
     if (message === "" || member === "") {
-      M.toast({ html: "Please enter a message and member" });
+      console.log("Please enter a message and member");
     } else {
       const updLog = {
         _id: current._id,
@@ -31,7 +31,6 @@ const EditLogModal = ({ current, updateLog }) => {
       };
 
       updateLog(updLog);
-      M.toast({ html: `Log updated by ${member}` });
 
       //Clear Fields
       setMessage("");
