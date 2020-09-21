@@ -10,7 +10,17 @@ import {
 export const getMembers = () => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch("/members");
+    const res = await fetch(
+      "https://team-logger-api.herokuapp.com/api/members",
+      {
+        method: "GET",
+        body: JSON.stringify(),
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token,
+        },
+      }
+    );
     const data = await res.json();
 
     dispatch({
@@ -29,13 +39,17 @@ export const getMembers = () => async (dispatch) => {
 export const addMember = (member) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch("/members", {
-      method: "POST",
-      body: JSON.stringify(member),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      "https://team-logger-api.herokuapp.com/api/members",
+      {
+        method: "POST",
+        body: JSON.stringify(member),
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token,
+        },
+      }
+    );
 
     const data = await res.json();
 
@@ -55,9 +69,16 @@ export const addMember = (member) => async (dispatch) => {
 export const deleteMember = (id) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch(`/members/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://team-logger-api.herokuapp.com/api/members/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token,
+        },
+      }
+    );
 
     dispatch({
       type: DELETE_MEMBER,

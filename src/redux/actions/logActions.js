@@ -14,7 +14,13 @@ import {
 export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch("/logs");
+    const res = await fetch("https://team-logger-api.herokuapp.com/api/logs", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token,
+      },
+    });
     const data = await res.json();
 
     dispatch({
@@ -33,11 +39,12 @@ export const getLogs = () => async (dispatch) => {
 export const addLog = (log) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch("/logs", {
+    const res = await fetch("https://team-logger-api.herokuapp.com/api/logs", {
       method: "POST",
       body: JSON.stringify(log),
       headers: {
         "Content-Type": "application/json",
+        "x-auth-token": localStorage.token,
       },
     });
 
@@ -59,9 +66,17 @@ export const addLog = (log) => async (dispatch) => {
 export const deleteLog = (id) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch(`/logs/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://team-logger-api.herokuapp.com/api/logs/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token,
+        },
+      }
+    );
+    console.log(res);
 
     dispatch({
       type: DELETE_LOG,
@@ -94,13 +109,17 @@ export const clearCurrent = () => {
 export const updateLog = (log) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch(`/logs/${log.id}`, {
-      method: "PUT",
-      body: JSON.stringify(log),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://team-logger-api.herokuapp.com/api/logs/${log._id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(log),
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token,
+        },
+      }
+    );
 
     const data = await res.json();
     dispatch({
@@ -119,7 +138,9 @@ export const updateLog = (log) => async (dispatch) => {
 export const searchLogs = (text) => async (dispatch) => {
   try {
     setLoading();
-    const res = await fetch(`/logs?q=${text}`);
+    const res = await fetch(
+      `https://team-logger-api.herokuapp.com/api/logs?q=${text}`
+    );
     const data = await res.json();
 
     dispatch({

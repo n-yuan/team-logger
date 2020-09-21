@@ -23,7 +23,7 @@ const EditLogModal = ({ current, updateLog }) => {
       M.toast({ html: "Please enter a message and member" });
     } else {
       const updLog = {
-        id: current.id,
+        _id: current._id,
         message,
         attention,
         member,
