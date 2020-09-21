@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { register } from "../redux/actions/authAction";
 
-const Register = ({ register }) => {
+const Register = (props) => {
+  const { register, isAuthenticated } = props;
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push("/home");
+    }
+    //eslint-disable-next-line
+  }, [isAuthenticated, props.history]);
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -88,4 +96,7 @@ const Register = ({ register }) => {
   );
 };
 
-export default connect(null, { register })(Register);
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps, { register })(Register);

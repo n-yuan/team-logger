@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -23,7 +24,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <PrivateRoute exact path="/home" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
