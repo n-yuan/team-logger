@@ -19,7 +19,7 @@ const MemberListModal = ({ getMembers, member: { members, loading } }) => {
           {!loading &&
             members !== null &&
             members.map((member) => (
-              <MemberItem member={member} key={member.id} />
+              <MemberItem member={member} key={member._id} />
             ))}
         </ul>
       </div>

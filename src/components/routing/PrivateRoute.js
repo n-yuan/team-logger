@@ -8,11 +8,7 @@ const PrivateRoute = ({
   component: Component,
   ...rest
 }) => {
-  console.log("PrivateRoute");
-  console.log(isAuthenticated);
-  console.log(!isAuthenticated);
-
-  console.log(loading);
+  
 
   return (
     <Route

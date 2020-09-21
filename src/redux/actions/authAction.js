@@ -22,7 +22,6 @@ export const register = (formData) => async (dispatch) => {
     });
 
     const data = await res.json();
-    console.log(data);
     dispatch({
       type: REGISTER_SUCCESS,
       payload: data,
@@ -42,7 +41,6 @@ export const register = (formData) => async (dispatch) => {
           }
         );
         const data = await res.json();
-        console.log(data)
         dispatch({ type: USER_LOADED, payload: data });
       } catch (error) {
         dispatch({ type: AUTH_ERROR });
@@ -50,7 +48,6 @@ export const register = (formData) => async (dispatch) => {
     }
     
   } catch (err) {
-    console.log("loginerror");
     dispatch({
       type: LOGIN_FAIL,
       payload: err.response.data.msg,
@@ -94,7 +91,6 @@ export const login = (formData) => async (dispatch) => {
       }
     }
   } catch (err) {
-    console.log("loginerror");
     dispatch({
       type: LOGIN_FAIL,
       payload: err.response.data.msg,

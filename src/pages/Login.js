@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { login } from "../redux/actions/authAction";
 
 const Login = (props) => {
-  console.log(props);
   const { isAuthenticated } = props;
   useEffect(() => {
     if (isAuthenticated) {
@@ -26,7 +25,6 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("onsubmit");
     login({
       password,
       email,

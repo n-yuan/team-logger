@@ -8,6 +8,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   SEARCH_LOGS,
+  CLEAR_SEARCH_LOGS,
 } from "./types";
 
 // Get logs from server
@@ -76,7 +77,6 @@ export const deleteLog = (id) => async (dispatch) => {
         },
       }
     );
-    console.log(res);
 
     dispatch({
       type: DELETE_LOG,
@@ -135,24 +135,13 @@ export const updateLog = (log) => async (dispatch) => {
 };
 
 //Search logs
-export const searchLogs = (text) => async (dispatch) => {
-  try {
-    setLoading();
-    const res = await fetch(
-      `https://team-logger-api.herokuapp.com/api/logs?q=${text}`
-    );
-    const data = await res.json();
+export const searchLogs = (text) => (dispatch) => {
+  dispatch({ type: SEARCH_LOGS, payload: text });
+};
 
-    dispatch({
-      type: SEARCH_LOGS,
-      payload: data,
-    });
-  } catch (err) {
-    dispatch({
-      type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
-  }
+//Clear Search logs
+export const clearSearchLogs = () => (dispatch) => {
+  dispatch({ type: CLEAR_SEARCH_LOGS });
 };
 
 //Set loading to true

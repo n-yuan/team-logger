@@ -8,6 +8,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   SEARCH_LOGS,
+  CLEAR_SEARCH_LOGS,
 } from "../actions/types";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   current: null,
   loading: false,
   error: null,
+  filtered: null,
 };
 
 export default (state = initialState, action) => {
@@ -57,8 +59,17 @@ export default (state = initialState, action) => {
     case SEARCH_LOGS:
       return {
         ...state,
-        logs: action.payload,
+        filtered: state.logs.filter((log) => {
+          const regex = new RegExp(`${action.payload}`, "gi");
+          return log.message.match(regex) || log.member.match(regex);
+        }),
       };
+    case CLEAR_SEARCH_LOGS:
+      return {
+        ...state,
+        filterd: null,
+      };
+
     case SET_LOADING:
       return {
         ...state,

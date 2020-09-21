@@ -12,7 +12,7 @@ const MemberSelectOptions = ({ getMembers, member: { members, loading } }) => {
     !loading &&
     members !== null &&
     members.map((m) => (
-      <option m={m.id} value={`${m.firstName} ${m.lastName}`}>
+      <option m={m._id} value={`${m.firstName} ${m.lastName}`} key={m._id}>
         {m.firstName} {m.lastName}
       </option>
   ))
