@@ -21,6 +21,7 @@ export const register = (formData) => async (dispatch) => {
         "x-auth-token": localStorage.token,
       },
     });
+
     const data = await res.json();
     console.log(data);
     dispatch({
