@@ -39,6 +39,7 @@ export const getLogs = () => async (dispatch) => {
 // Add new log
 export const addLog = (log) => async (dispatch) => {
   try {
+    console.log("add logs action");
     setLoading();
     const res = await fetch("https://team-logger-api.herokuapp.com/api/logs", {
       method: "POST",

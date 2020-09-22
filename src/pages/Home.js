@@ -20,12 +20,18 @@ const Home = (props) => {
   return (
     <Fragment>
       <Navbar />
-      
+
       <div className="home-container">
         <div className="container">
           <Banner />
-          <SearchBar />
-          {/* <AddBtn /> */}
+          <div className="row">
+            <div className="col-lg-6">
+              <SearchBar />
+            </div>
+            <div className="col-lg-6">
+              <AddBtn />
+            </div>
+          </div>
           <Logs />
 
           {/* <AddLogModal /> */}

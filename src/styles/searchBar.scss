@@ -1,0 +1,21 @@
+.input-field-search-bar {
+  display: inline-block;
+  width: 100%;
+  input {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 1px rgba(128, 128, 128, 0.199) solid;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
+    padding: 6px 15px;
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+    }
+    &:hover {
+      border: 1.2px #4face5 solid;
+      box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2);
+    }
+  }
+}

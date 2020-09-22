@@ -8,7 +8,7 @@ import { setCurrent } from "../redux/actions/logActions";
 const Landing = (props) => {
   const [currentForm, setCurrentForm] = useState(null);
 
-  const onClick = (currentForm) => {
+  const onSetCurrentForm = (currentForm) => {
     setCurrentForm(currentForm);
   };
 
@@ -16,7 +16,7 @@ const Landing = (props) => {
 
   return (
     <div className="landing-page-wrapper">
-      <Navbar onClick={onClick} />
+      <Navbar onClick={onSetCurrentForm} />
       <div className="container landing-container">
         <div className="row">
           <div className="col-lg-6">
@@ -31,7 +31,7 @@ const Landing = (props) => {
               productivity.
             </p>
             <div className="intro-btn-container">
-              <button className="intro-btn" onClick={() => onClick("register")}>
+              <button className="intro-btn" onClick={() => onSetCurrentForm("register")}>
                 GET START
               </button>
             </div>
