@@ -36,6 +36,28 @@ const Navbar = (props) => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarResponsive">
+            {isAuthenticated && (
+              <ul className="nav-log-member navbar-nav mr-auto">
+                <li className="nav-item">
+                  <a
+                    href=""
+                    className="nav-link"
+                    // onClick={() => props.onClick("landing-image")}
+                  >
+                    Logs
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    href=""
+                    className="nav-link"
+                    // onClick={() => props.onClick("landing-image")}
+                  >
+                    Members
+                  </a>
+                </li>
+              </ul>
+            )}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a
@@ -54,7 +76,9 @@ const Navbar = (props) => {
               {isAuthenticated ? (
                 <div className="logout-item">
                   <li>
-                    <li className="logout-greeting">Hello {user && user.name}</li>
+                    <li className="logout-greeting">
+                      Hello {user && user.name}
+                    </li>
                     <a onClick={onLogout} href="#!">
                       <i className="fas fa-sign-out-alt fa-lg"></i>
                       <span className="hide-sm logout-caption">Logout</span>

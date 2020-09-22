@@ -186,4 +186,20 @@
     width: 100%;
     justify-content: center; }
 
+.banner-container {
+  border: none;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06); }
+  .banner-container .banner-header {
+    margin: 30px 80px; }
+  .banner-container .office-work-image {
+    width: 200px;
+    margin-left: 240px; }
+
+.home-container {
+  background-color: #f9f9f9;
+  height: 100%;
+  padding-top: 30px; }
+
 /*# sourceMappingURL=style.css.map */

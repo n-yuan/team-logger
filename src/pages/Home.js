@@ -5,6 +5,7 @@ import EditLogModal from "../components/logs/EditLogModal";
 import AddMemberModal from "../components/members/AddMemberModal";
 import MemberListModal from "../components/members/MemberListModal";
 import SearchBar from "../components/layout/SearchBar";
+import Banner from "../components/layout/Banner";
 import Logs from "../components/logs/Logs";
 import Navbar from "../components/layout/Navbar";
 import { connect } from "react-redux";
@@ -15,19 +16,23 @@ const Home = (props) => {
   const { loadUser } = props;
   useEffect(() => {
     loadUser();
-  },[]);
+  }, []);
   return (
     <Fragment>
       <Navbar />
-      <SearchBar />
-      <div className="container">
-        {/* <AddBtn /> */}
-        <Logs />
+      
+      <div className="home-container">
+        <div className="container">
+          <Banner />
+          <SearchBar />
+          {/* <AddBtn /> */}
+          <Logs />
 
-        {/* <AddLogModal /> */}
-        {/* <EditLogModal /> */}
-        {/* <AddMemberModal /> */}
-        {/* <MemberListModal /> */}
+          {/* <AddLogModal /> */}
+          {/* <EditLogModal /> */}
+          {/* <AddMemberModal /> */}
+          {/* <MemberListModal /> */}
+        </div>
       </div>
     </Fragment>
   );
