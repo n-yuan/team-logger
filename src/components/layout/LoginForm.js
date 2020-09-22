@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "../redux/actions/authAction";
+import { login } from "../../redux/actions/authAction";
 
-const Login = (props) => {
-  const { isAuthenticated } = props;
+const LoginForm = (props) => {
+  const { isAuthenticated, routeHistory } = props;
+  console.log(routeHistory);
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/home");
+      routeHistory.push("/home");
     }
     //eslint-disable-next-line
   }, [isAuthenticated, props.history]);
@@ -25,7 +26,7 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("login")
+    console.log("login");
     login({
       password,
       email,
@@ -38,7 +39,7 @@ const Login = (props) => {
         <h1 className="login-form-header">
           Account <span className="text-primary">Login</span>
         </h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="email" className="login-form-item">
               Email Address
@@ -68,7 +69,6 @@ const Login = (props) => {
             type="submit"
             value="Login"
             className="btn btn-primary btn-block login-form-btn"
-            onClick={() => onSubmit()}
           >
             LOGIN
           </button>
@@ -84,4 +84,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(mapStateToProps, { login })(LoginForm);

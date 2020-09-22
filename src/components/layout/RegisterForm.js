@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { register } from "../redux/actions/authAction";
+import { register } from "../../redux/actions/authAction";
 
-const Register = (props) => {
-  const { register, isAuthenticated } = props;
+const RegisterForm = (props) => {
+  const { register, isAuthenticated, routeHistory } = props;
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/home");
+      routeHistory.push("/home");
     }
     //eslint-disable-next-line
   }, [isAuthenticated, props.history]);
@@ -116,4 +116,4 @@ const Register = (props) => {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
-export default connect(mapStateToProps, { register })(Register);
+export default connect(mapStateToProps, { register })(RegisterForm);

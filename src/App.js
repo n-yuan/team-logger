@@ -7,8 +7,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import RegisterForm from "./components/layout/RegisterForm";
+import LoginForm from "./components/layout/LoginForm";
 import Landing from "./pages/Landing";
 import "./styles/style.css";
 
@@ -21,8 +21,6 @@ const App = () => {
         <Switch>
           <PrivateRoute exact path="/home" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/landing" component={Landing} />
         </Switch>
         {/* Main Page */}

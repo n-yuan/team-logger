@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import LandingImage from "../images/Landing-img.svg";
-import Register from "../pages/Register";
-import Login from "../pages/Login";
+import RegisterForm from "../components/layout/RegisterForm";
+import LoginForm from "../components/layout/LoginForm";
 import { setCurrent } from "../redux/actions/logActions";
 
-const Landing = () => {
+const Landing = (props) => {
   const [currentForm, setCurrentForm] = useState(null);
 
   const onClick = (currentForm) => {
     setCurrentForm(currentForm);
   };
+
+  const { history } = props;
 
   return (
     <div className="landing-page-wrapper">
@@ -39,9 +41,9 @@ const Landing = () => {
 
           <div className="col-lg-6">
             {currentForm === "register" ? (
-              <Register />
+              <RegisterForm routeHistory={history} />
             ) : currentForm === "login" ? (
-              <Login />
+              <LoginForm routeHistory={history} />
             ) : (
               <img
                 src={LandingImage}
@@ -49,9 +51,6 @@ const Landing = () => {
                 className="landing-image"
               />
             )}
-
-            {/* <Register /> */}
-            {/* <Login /> */}
           </div>
         </div>
       </div>
