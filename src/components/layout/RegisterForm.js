@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { register } from "../../redux/actions/authAction";
 
@@ -106,8 +105,6 @@ const RegisterForm = (props) => {
             REGISTER
           </button>
         </form>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
       </div>
     </div>
   );

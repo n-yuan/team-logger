@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PrivateRoute from "./components/routing/PrivateRoute";
+import PrivateRoute from "./routing/PrivateRoute";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import RegisterForm from "./components/layout/RegisterForm";
-import LoginForm from "./components/layout/LoginForm";
 import Landing from "./pages/Landing";
 import "./styles/style.css";
 

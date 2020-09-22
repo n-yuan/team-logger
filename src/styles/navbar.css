@@ -31,5 +31,18 @@
   .navbar-container .nav-btn:hover {
     border: 2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+.navbar-container .logout-item {
+  display: inline-block;
+  margin-top: 17px; }
+  .navbar-container .logout-item .fa-sign-out-alt {
+    color: #50ace5;
+    margin-right: 3px; }
+  .navbar-container .logout-item .logout-caption {
+    color: #50ace5;
+    font-size: 16px; }
+  .navbar-container .logout-item .logout-greeting {
+    display: inline-block;
+    margin-right: 8px;
+    color: #50ace5; }
 
 /*# sourceMappingURL=navbar.css.map */

@@ -31,6 +31,19 @@
   .navbar-container .nav-btn:hover {
     border: 2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+.navbar-container .logout-item {
+  display: inline-block;
+  margin-top: 17px; }
+  .navbar-container .logout-item .fa-sign-out-alt {
+    color: #50ace5;
+    margin-right: 3px; }
+  .navbar-container .logout-item .logout-caption {
+    color: #50ace5;
+    font-size: 16px; }
+  .navbar-container .logout-item .logout-greeting {
+    display: inline-block;
+    margin-right: 8px;
+    color: #50ace5; }
 
 .register-form-container {
   padding: 0 50px;
@@ -39,7 +52,7 @@
   position: relative;
   height: 100%;
   animation: fadeInRight;
-  animation-duration: 3s; }
+  animation-duration: .5s; }
   .register-form-container .register-form-header {
     margin-top: 85px; }
     .register-form-container .register-form-header:after {
@@ -134,7 +147,7 @@
   .landing-page-wrapper .landing-container .landing-image {
     margin-top: 80px;
     animation: fadeInRight;
-    animation-duration: 3s; }
+    animation-duration: 0.5s; }
 
 .login-form-container {
   padding: 0 50px;
@@ -143,7 +156,7 @@
   position: relative;
   height: 100%;
   animation: fadeInRight;
-  animation-duration: 3s; }
+  animation-duration: .5s; }
   .login-form-container .login-form-item {
     font-size: 16px;
     color: grey; }

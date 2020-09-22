@@ -45,4 +45,21 @@
       box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2);
     }
   }
+  .logout-item {
+    display: inline-block;
+    margin-top:17px;
+    .fa-sign-out-alt {
+      color: $primaryColor;
+      margin-right: 3px;
+    }
+    .logout-caption {
+      color: $primaryColor;
+      font-size: 16px;
+    }
+    .logout-greeting{
+      display: inline-block;
+      margin-right: 8px;
+      color: $primaryColor;
+    }
+  }
 }
