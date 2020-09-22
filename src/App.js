@@ -12,7 +12,6 @@ import Register from "./pages/Register";
 import Landing from "./pages/Landing";
 import "./styles/style.css";
 
-
 // import "./App.css";
 
 const App = () => {
@@ -26,7 +25,6 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/landing" component={Landing} />
         </Switch>
-
         {/* Main Page */}
       </Router>
     </Provider>

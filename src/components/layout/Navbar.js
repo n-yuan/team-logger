@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../images/Logo.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg navbar-container">
         <div className="container-fluid">
           <a href="#home" className="navbar-brand">
             <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
@@ -27,7 +27,11 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a href="#home" className="nav-link">
+                <a
+                  href="#home"
+                  className="nav-link"
+                  onClick={() => props.onClick("landing-image")}
+                >
                   Home
                 </a>
               </li>
@@ -36,7 +40,7 @@ const Navbar = () => {
                   Contact us
                 </a>
               </li>
-              <button className="nav-btn">Login</button>
+              <button className="nav-btn" onClick={()=>props.onClick("login")}>Login</button>
             </ul>
           </div>
         </div>

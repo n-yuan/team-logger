@@ -1,70 +1,48 @@
 @import "./variables.scss";
-
-.navbar-brand {
-  color: $primaryColor;
-}
-.navbar-toggler {
-  &:focus {
-    outline: 0;
-    box-shadow: none;
-    -webkit-appearance: none;
-  }
-  .custom-toggler-icon {
+.navbar-container {
+  .navbar-brand {
     color: $primaryColor;
-    border: none;
+  }
+  .navbar-toggler {
     &:focus {
       outline: 0;
       box-shadow: none;
       -webkit-appearance: none;
     }
+    .custom-toggler-icon {
+      color: $primaryColor;
+      border: none;
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+        -webkit-appearance: none;
+      }
+    }
   }
-}
 
-.nav-link {
-  color: $primaryColor;
-  margin: 5px 35px;
-  font-size: 20px;
-}
+  .nav-link {
+    color: $primaryColor;
+    margin: 5px 35px;
+    font-size: 20px;
+  }
 
-.nav-btn {
-  border: 2px solid $primaryColor;
-  background-color: Transparent;
-  border-radius: 25px;
-  padding: 0 20px;
-  font-size: 15px;
-  color: $primaryColor;
-  height: 40px;
-  margin: 10px;
-}
-
-h1 {
-  color: $primaryColor;
-  font-weight: 600;
-  font-size: 45px;
-  margin-top: 140px;
-}
-
-p {
-  color: #a1c4e3;
-  margin-right: 60px;
-  margin-top: 30px;
-  font-size: 16px;
-}
-
-.intro-btn-container {
-  width: 100%;
-
-  .intro-btn {
+  .nav-btn {
     border: 2px solid $primaryColor;
     background-color: Transparent;
     border-radius: 25px;
-    padding: 5px 20px;
+    padding: 0 25px;
     font-size: 15px;
     color: $primaryColor;
-    margin-top: 30px;
+    height: 35px;
+    margin: 10px;
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+    }
+    &:hover {
+      border: 2px #4face5 solid;
+      box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2);
+    }
   }
-}
-
-.landing-image {
-  margin-top: 80px;
 }

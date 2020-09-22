@@ -25,6 +25,7 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log("login")
     login({
       password,
       email,
@@ -33,13 +34,15 @@ const Login = (props) => {
 
   return (
     <div className="container">
-      <div className="form-container">
-        <h1>
+      <div className="form-container login-form-container">
+        <h1 className="login-form-header">
           Account <span className="text-primary">Login</span>
         </h1>
-        <form onSubmit={onSubmit}>
+        <form>
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email" className="login-form-item">
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
@@ -49,7 +52,9 @@ const Login = (props) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="login-form-item">
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -59,11 +64,14 @@ const Login = (props) => {
             />
           </div>
 
-          <input
+          <button
             type="submit"
             value="Login"
-            className="btn btn-primary btn-block"
-          />
+            className="btn btn-primary btn-block login-form-btn"
+            onClick={() => onSubmit()}
+          >
+            LOGIN
+          </button>
         </form>
         <Link to="/register">Register</Link>
         <Link to="/login">Login</Link>

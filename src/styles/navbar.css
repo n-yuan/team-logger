@@ -1,57 +1,35 @@
-.navbar-brand {
+.navbar-container .navbar-brand {
   color: #50ace5; }
-
-.navbar-toggler:focus {
+.navbar-container .navbar-toggler:focus {
   outline: 0;
   box-shadow: none;
   -webkit-appearance: none; }
-.navbar-toggler .custom-toggler-icon {
+.navbar-container .navbar-toggler .custom-toggler-icon {
   color: #50ace5;
   border: none; }
-  .navbar-toggler .custom-toggler-icon:focus {
+  .navbar-container .navbar-toggler .custom-toggler-icon:focus {
     outline: 0;
     box-shadow: none;
     -webkit-appearance: none; }
-
-.nav-link {
+.navbar-container .nav-link {
   color: #50ace5;
   margin: 5px 35px;
   font-size: 20px; }
-
-.nav-btn {
+.navbar-container .nav-btn {
   border: 2px solid #50ace5;
   background-color: Transparent;
   border-radius: 25px;
-  padding: 0 20px;
+  padding: 0 25px;
   font-size: 15px;
   color: #50ace5;
-  height: 40px;
+  height: 35px;
   margin: 10px; }
-
-h1 {
-  color: #50ace5;
-  font-weight: 600;
-  font-size: 45px;
-  margin-top: 140px; }
-
-p {
-  color: #a1c4e3;
-  margin-right: 60px;
-  margin-top: 30px;
-  font-size: 16px; }
-
-.intro-btn-container {
-  width: 100%; }
-  .intro-btn-container .intro-btn {
-    border: 2px solid #50ace5;
-    background-color: Transparent;
-    border-radius: 25px;
-    padding: 5px 20px;
-    font-size: 15px;
-    color: #50ace5;
-    margin-top: 30px; }
-
-.landing-image {
-  margin-top: 80px; }
+  .navbar-container .nav-btn:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .navbar-container .nav-btn:hover {
+    border: 2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
 /*# sourceMappingURL=navbar.css.map */

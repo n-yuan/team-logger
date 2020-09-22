@@ -103,7 +103,7 @@ const Register = (props) => {
             value="Register"
             className="btn btn-primary register-form-btn"
           >
-            Register
+            REGISTER
           </button>
         </form>
         <Link to="/register">Register</Link>
