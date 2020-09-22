@@ -37,7 +37,9 @@
   width: 100%;
   display: block;
   position: relative;
-  height: 100%; }
+  height: 100%;
+  animation: fadeInRight;
+  animation-duration: 3s; }
   .register-form-container .register-form-header {
     margin-top: 85px; }
     .register-form-container .register-form-header:after {
@@ -130,18 +132,21 @@
         border: 2px #4face5 solid;
         box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
   .landing-page-wrapper .landing-container .landing-image {
-    margin-top: 80px; }
-
-.login-form-item {
-  font-size: 16px;
-  color: grey; }
+    margin-top: 80px;
+    animation: fadeInRight;
+    animation-duration: 3s; }
 
 .login-form-container {
   padding: 0 50px;
   width: 100%;
   display: block;
   position: relative;
-  height: 100%; }
+  height: 100%;
+  animation: fadeInRight;
+  animation-duration: 3s; }
+  .login-form-container .login-form-item {
+    font-size: 16px;
+    color: grey; }
   .login-form-container .login-form-header {
     margin-top: 155px; }
   .login-form-container input {

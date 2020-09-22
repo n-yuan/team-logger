@@ -1,15 +1,15 @@
-.login-form-item {
-  font-size: 16px;
-  color: grey;
-}
-
 .login-form-container {
   padding: 0 50px;
   width: 100%;
   display: block;
   position: relative;
   height: 100%;
-
+  animation: fadeInRight;
+  animation-duration: 3s;
+  .login-form-item {
+    font-size: 16px;
+    color: grey;
+  }
   .login-form-header {
     margin-top: 155px;
   }

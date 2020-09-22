@@ -4,6 +4,8 @@
   display: block;
   position: relative;
   height: 100%;
+  animation: fadeInRight;
+  animation-duration: 3s;
 
   .register-form-header {
     margin-top: 85px;
