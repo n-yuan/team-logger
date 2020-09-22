@@ -49,7 +49,6 @@ const Register = (props) => {
             <input
               type="text"
               name="name"
-              placeholder="Name"
               value={name}
               required
               onChange={onChange}
@@ -64,7 +63,6 @@ const Register = (props) => {
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
               value={email}
               reuqired
               onChange={onChange}
@@ -79,7 +77,6 @@ const Register = (props) => {
             <input
               type="password"
               name="password"
-              placeholder="Password"
               value={password}
               reuqired
               minLength="6"
@@ -95,7 +92,6 @@ const Register = (props) => {
             <input
               type="password"
               name="password2"
-              placeholder="Confirm Password"
               value={password2}
               reuqired
               minLength="6"
