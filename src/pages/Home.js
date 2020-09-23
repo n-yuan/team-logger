@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect } from "react";
-import AddBtn from "../components/layout/AddBtn";
 import AddLogModal from "../components/logs/AddLogModal";
 import EditLogModal from "../components/logs/EditLogModal";
 import AddMemberModal from "../components/members/AddMemberModal";
@@ -29,13 +28,11 @@ const Home = (props) => {
               <SearchBar />
             </div>
             <div className="col-lg-6">
-              <AddBtn />
+              <AddLogModal />
             </div>
           </div>
           <Logs />
-
-          {/* <AddLogModal /> */}
-          {/* <EditLogModal /> */}
+          <EditLogModal />
           {/* <AddMemberModal /> */}
           {/* <MemberListModal /> */}
         </div>

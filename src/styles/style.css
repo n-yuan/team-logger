@@ -240,19 +240,128 @@
     border: 1.2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
-.input-field-add-log input {
+.modal-title {
+  font-size: 26px;
+  color: #50ace5; }
+
+.modal-content {
+  border-radius: 25px; }
+  .modal-content:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+
+.close:focus {
+  outline: 0;
+  box-shadow: none;
+  -webkit-appearance: none; }
+
+.input-field-add-log textarea {
   margin-bottom: 20px;
   width: 400px;
   border-radius: 25px;
   border: 1px rgba(128, 128, 128, 0.199) solid;
   box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
-  padding: 6px 15px; }
-  .input-field-add-log input:focus {
+  padding: 15px 15px; }
+  .input-field-add-log textarea:focus {
     outline: 0;
     box-shadow: none;
     -webkit-appearance: none; }
-  .input-field-add-log input:hover {
+  .input-field-add-log textarea:hover {
     border: 1.2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+
+.input-field-select-member select {
+  border: 1px rgba(128, 128, 128, 0.199) solid;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 25px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  padding: 3px 20px; }
+  .input-field-select-member select:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .input-field-select-member select:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+
+.input-field-check-box input {
+  -webkit-appearance: none;
+  border: 1px rgba(128, 128, 128, 0.199) solid;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 8px;
+  display: inline-block;
+  position: relative;
+  margin-top: 25px; }
+  .input-field-check-box input:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .input-field-check-box input:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px rgba(79, 172, 229, 0.2); }
+  .input-field-check-box input:active, .input-field-check-box input:checked:active {
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); }
+  .input-field-check-box input:checked {
+    background-color: #4fabe518;
+    border: 1px solid #4fabe518;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7; }
+  .input-field-check-box input:checked:after {
+    content: "\2714";
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #99a1a7; }
+.input-field-check-box .checkbox-caption {
+  display: inline-block;
+  margin-left: 9px;
+  padding: 8px 0;
+  font-style: italic;
+  font-weight: 600; }
+
+.submit-log-btn {
+  border: 2px solid #50ace5;
+  background-color: Transparent;
+  border-radius: 25px;
+  padding: 3px 6px;
+  font-size: 15px;
+  color: #50ace5;
+  margin-top: 10px;
+  width: 100px; }
+  .submit-log-btn:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .submit-log-btn:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+
+.cancel-add-log-btn {
+  border: 2px solid #50ace5;
+  background-color: Transparent;
+  border-radius: 25px;
+  padding: 3px 6px;
+  font-size: 15px;
+  color: #50ace5;
+  margin-top: 10px;
+  width: 100px; }
+  .cancel-add-log-btn:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .cancel-add-log-btn:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+
+.toast {
+  position: absolute; }
+  .toast .toast-header {
+    color: rgba(216, 122, 122, 0.877); }
 
 /*# sourceMappingURL=style.css.map */
