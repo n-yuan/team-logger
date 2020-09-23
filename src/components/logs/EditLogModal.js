@@ -1,17 +1,38 @@
 import React, { useState, useEffect } from "react";
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Toast,
+  ToastHeader,
+} from "reactstrap";
 import MemberSelectOptions from "../members/MemberSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { updateLog } from "../../redux/actions/logActions";
+import { updateLog, clearCurrent } from "../../redux/actions/logActions";
 
-const EditLogModal = ({ current, updateLog }) => {
+const EditLogModal = (props) => {
+  const { className } = props;
+  const [modal, setModal] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const toggle = () => {
+    if (modal) {
+      clearCurrent();
+    }
+    setModal(!modal);
+  };
+  const toggleEditLog = () => setShow(!show);
+  const { current, updateLog, clearCurrent } = props;
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [member, setMember] = useState("");
 
   useEffect(() => {
     if (current) {
+      setModal(!modal);
       setMessage(current.message);
       setAttention(current.attention);
       setMember(current.member);
@@ -20,7 +41,8 @@ const EditLogModal = ({ current, updateLog }) => {
 
   const onSubmit = () => {
     if (message === "" || member === "") {
-      console.log("Please enter a message and member");
+      toggleEditLog();
+      toggle();
     } else {
       const updLog = {
         _id: current._id,
@@ -29,8 +51,10 @@ const EditLogModal = ({ current, updateLog }) => {
         member,
         date: new Date(),
       };
+      console.log(updLog)
 
       updateLog(updLog);
+      toggle();
 
       //Clear Fields
       setMessage("");
@@ -40,21 +64,27 @@ const EditLogModal = ({ current, updateLog }) => {
   };
 
   return (
-    <div id="edit-log-modal" className="modal" style={modalStyle}>
-      <div className="modal-content">
-        <h4>Enter Team Log</h4>
-        <div className="row">
-          <div className="input-field">
-            <input
+    <div className="add-btn-container">
+      <Modal
+        isOpen={modal}
+        modalTransition={{ timeout: 700 }}
+        backdropTransition={{ timeout: 1300 }}
+        toggle={toggle}
+        className={className}
+      >
+        <ModalHeader toggle={toggle}>Enter Team Log</ModalHeader>
+        <ModalBody>
+          <div className="input-field-add-log">
+            <textarea
+              rows="4"
               type="text"
               name="message"
               value={message}
+              placeholder="Add Log Message"
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field">
+          <div className="input-field-select-member">
             <select
               name="member"
               value={member}
@@ -67,41 +97,41 @@ const EditLogModal = ({ current, updateLog }) => {
               <MemberSelectOptions />
             </select>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field">
-            <p>
-              <label>
-                <input
-                  type="checkbox"
-                  className="filled-in"
-                  checked={attention}
-                  value={attention}
-                  onChange={(e) => setAttention(!attention)}
-                />
-                <span>Needs Attention</span>
-              </label>
-            </p>
+          <div className="input-field-check-box">
+            <input
+              type="checkbox"
+              className="filled-in"
+              checked={attention}
+              value={attention}
+              onChange={(e) => setAttention(!attention)}
+            />
+            <div className="checkbox-caption">
+              <span> Needs Attention</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="modal-footer">
-        <a
-          href="#!"
-          onClick={onSubmit}
-          className="modal-close waves-effect blue btn"
-        >
-          Enter
-        </a>
+        </ModalBody>
+        <ModalFooter>
+          <button className="submit-log-btn" onClick={onSubmit}>
+            Enter
+          </button>{" "}
+          <button className="cancel-add-log-btn" onClick={toggle}>
+            Cancel
+          </button>
+        </ModalFooter>
+      </Modal>
+
+      <div>
+        <Toast isOpen={show} className="toast">
+          <ToastHeader toggle={toggleEditLog}>
+            <i class="fas fa-exclamation-circle"></i> Please enter a message and
+            member.
+          </ToastHeader>
+        </Toast>
       </div>
     </div>
   );
 };
 
-const modalStyle = {
-  width: "75%",
-  height: "75%",
-};
 const mapStateToProps = (state) => ({
   current: state.log.current,
 });
@@ -109,4 +139,6 @@ EditLogModal.propTypes = {
   updateLog: PropTypes.func.isRequired,
   current: PropTypes.object,
 };
-export default connect(mapStateToProps, { updateLog })(EditLogModal);
+export default connect(mapStateToProps, { updateLog, clearCurrent })(
+  EditLogModal
+);

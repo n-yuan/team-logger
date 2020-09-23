@@ -4,9 +4,9 @@ import LogItem from "./LogItems";
 import Preloader from "../layout/Preloader";
 import PropTypes from "prop-types";
 import { getLogs } from "../../redux/actions/logActions";
+import { useState } from "react";
 
-
-const Logs = ({ log: { logs, loading, filtered}, getLogs }) => {
+const Logs = ({ log: { logs, loading, filtered }, getLogs }) => {
   useEffect(() => {
     getLogs();
     // eslint-disable-next-line
@@ -16,14 +16,8 @@ const Logs = ({ log: { logs, loading, filtered}, getLogs }) => {
     return <Preloader />;
   }
 
-  
-
   return (
-    <ul className="collection with-header">
-      <li className="collection-header">
-        <h4 className="center">System Logs</h4>
-      </li>
-
+    <div className="logs-container">
       {!loading && logs.length === 0 ? (
         <p className="center">No logs to show...</p>
       ) : filtered !== null ? (
@@ -31,7 +25,7 @@ const Logs = ({ log: { logs, loading, filtered}, getLogs }) => {
       ) : (
         logs.map((log) => <LogItem log={log} key={log._id} />)
       )}
-    </ul>
+    </div>
   );
 };
 
@@ -44,4 +38,4 @@ const mapStateToProps = (state) => ({
   log: state.log,
 });
 
-export default connect(mapStateToProps, { getLogs})(Logs);
+export default connect(mapStateToProps, { getLogs })(Logs);

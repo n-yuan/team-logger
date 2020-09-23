@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.log-item-container {
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin: 20px;
+
+  .orange-text {
+    color: $alertColor;
+  }
+  .blue-text {
+    color: $primaryColor;
+  }
+  border: none;
+  .trash-icon {
+    color: $primaryColor;
+    display: inline-block;
+    margin-left:10px ;
+  }
+}

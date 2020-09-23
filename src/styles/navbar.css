@@ -44,5 +44,7 @@
     display: inline-block;
     margin-right: 8px;
     color: #50ace5; }
+.navbar-container .landing-nav {
+  display: inline-block; }
 
 /*# sourceMappingURL=navbar.css.map */

@@ -108,6 +108,7 @@ export const clearCurrent = () => {
 
 // Update log on server
 export const updateLog = (log) => async (dispatch) => {
+  console.log(log)
   try {
     setLoading();
     const res = await fetch(
@@ -123,6 +124,7 @@ export const updateLog = (log) => async (dispatch) => {
     );
 
     const data = await res.json();
+    console.log(data)
     dispatch({
       type: UPDATE_LOG,
       payload: data,

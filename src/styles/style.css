@@ -44,6 +44,8 @@
     display: inline-block;
     margin-right: 8px;
     color: #50ace5; }
+.navbar-container .landing-nav {
+  display: inline-block; }
 
 .register-form-container {
   padding: 0 50px;
@@ -363,5 +365,21 @@
   position: absolute; }
   .toast .toast-header {
     color: rgba(216, 122, 122, 0.877); }
+
+.log-item-container {
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin: 20px;
+  border: none; }
+  .log-item-container .orange-text {
+    color: rgba(216, 122, 122, 0.877); }
+  .log-item-container .blue-text {
+    color: #50ace5; }
+  .log-item-container .trash-icon {
+    color: #50ace5;
+    display: inline-block;
+    margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */

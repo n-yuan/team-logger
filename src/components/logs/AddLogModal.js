@@ -12,8 +12,8 @@ import PropTypes from "prop-types";
 import { addLog } from "../../redux/actions/logActions";
 import MemberSelectOptions from "../members/MemberSelectOptions";
 
-const AddBtn = (props) => {
-  const { buttonLabel, className } = props;
+const AddLogModal = (props) => {
+  const { className } = props;
   const [modal, setModal] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -47,69 +47,70 @@ const AddBtn = (props) => {
     <div className="add-btn-container">
       <div className="add-log-btn-container">
         <button className="add-log-btn" onClick={toggle}>
-          {buttonLabel}Add log
+          Add log
         </button>
       </div>
-      
-        <Modal
-          isOpen={modal}
-          modalTransition={{ timeout: 700 }}
-          backdropTransition={{ timeout: 1300 }}
-          toggle={toggle}
-          className={className}
-        >
-          <ModalHeader toggle={toggle} >Enter Team Log</ModalHeader>
-          <ModalBody>
-            <div className="input-field-add-log">
-              <textarea
-                rows="4"
-                type="text"
-                name="message"
-                value={message}
-                placeholder="Add Log Message"
-                onChange={(e) => setMessage(e.target.value)}
-              />
+
+      <Modal
+        isOpen={modal}
+        modalTransition={{ timeout: 700 }}
+        backdropTransition={{ timeout: 1300 }}
+        toggle={toggle}
+        className={className}
+      >
+        <ModalHeader toggle={toggle}>Enter Team Log</ModalHeader>
+        <ModalBody>
+          <div className="input-field-add-log">
+            <textarea
+              rows="4"
+              type="text"
+              name="message"
+              value={message}
+              placeholder="Add Log Message"
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+          <div className="input-field-select-member">
+            <select
+              name="member"
+              value={member}
+              className="browser-default"
+              onChange={(e) => setMember(e.target.value)}
+            >
+              <option disabled value="">
+                Select Member
+              </option>
+              <MemberSelectOptions />
+            </select>
+          </div>
+          <div className="input-field-check-box">
+            <input
+              type="checkbox"
+              className="filled-in"
+              checked={attention}
+              value={attention}
+              onChange={(e) => setAttention(!attention)}
+            />
+            <div className="checkbox-caption">
+              <span> Needs Attention</span>
             </div>
-            <div className="input-field-select-member">
-              <select
-                name="member"
-                value={member}
-                className="browser-default"
-                onChange={(e) => setMember(e.target.value)}
-              >
-                <option disabled value="">
-                  Select Member
-                </option>
-                <MemberSelectOptions />
-              </select>
-            </div>
-            <div className="input-field-check-box">
-              <input
-                type="checkbox"
-                className="filled-in"
-                checked={attention}
-                value={attention}
-                onChange={(e) => setAttention(!attention)}
-              />
-              <div className="checkbox-caption">
-                <span> Needs Attention</span>
-              </div>
-            </div>
-          </ModalBody>
-          <ModalFooter>
-            <button className="submit-log-btn" onClick={onSubmit}>
-              Enter
-            </button>{" "}
-            <button className="cancel-add-log-btn" onClick={toggle}>
-              Cancel
-            </button>
-          </ModalFooter>
-        </Modal>
-     
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <button className="submit-log-btn" onClick={onSubmit}>
+            Enter
+          </button>{" "}
+          <button className="cancel-add-log-btn" onClick={toggle}>
+            Cancel
+          </button>
+        </ModalFooter>
+      </Modal>
+
       <div>
-        <Toast isOpen={show} className="toast">
+        <Toast isOpen={show}>
           <ToastHeader toggle={toggleLog}>
-            <i class="fas fa-exclamation-circle"></i> Please enter logs.
+            <i class="fas fa-exclamation-circle"></i> Please enter logs and
+            select members.
           </ToastHeader>
         </Toast>
       </div>
@@ -117,8 +118,8 @@ const AddBtn = (props) => {
   );
 };
 
-AddBtn.propTypes = {
+AddLogModal.propTypes = {
   addLog: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addLog })(AddBtn);
+export default connect(null, { addLog })(AddLogModal);
