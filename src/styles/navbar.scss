@@ -1,7 +1,8 @@
 @import "./variables.scss";
 .navbar-container {
   .navbar-brand {
-    color: $primaryColor;
+    color: rgb(68,83,96);
+    font-weight: 700;
   }
   .navbar-toggler {
     &:focus {
@@ -21,7 +22,7 @@
   }
 
   .nav-link {
-    color: $primaryColor;
+    color: rgb(68,83,96);
     margin: 5px 35px;
     font-size: 20px;
   }

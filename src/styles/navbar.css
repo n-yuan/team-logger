@@ -1,5 +1,6 @@
 .navbar-container .navbar-brand {
-  color: #50ace5; }
+  color: #445360;
+  font-weight: 700; }
 .navbar-container .navbar-toggler:focus {
   outline: 0;
   box-shadow: none;
@@ -12,7 +13,7 @@
     box-shadow: none;
     -webkit-appearance: none; }
 .navbar-container .nav-link {
-  color: #50ace5;
+  color: #445360;
   margin: 5px 35px;
   font-size: 20px; }
 .navbar-container .nav-btn {

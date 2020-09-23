@@ -18,13 +18,15 @@ const Logs = ({ log: { logs, loading, filtered }, getLogs }) => {
 
   return (
     <div className="logs-container">
-      {!loading && logs.length === 0 ? (
-        <p className="center">No logs to show...</p>
-      ) : filtered !== null ? (
-        filtered.map((log) => <LogItem log={log} key={log._id} />)
-      ) : (
-        logs.map((log) => <LogItem log={log} key={log._id} />)
-      )}
+      <div className="row">
+        {!loading && logs.length === 0 ? (
+          <p className="center">No logs to show...</p>
+        ) : filtered !== null ? (
+          filtered.map((log) => <LogItem log={log} key={log._id} />)
+        ) : (
+          logs.map((log) => <LogItem log={log} key={log._id} />)
+        )}
+      </div>
     </div>
   );
 };

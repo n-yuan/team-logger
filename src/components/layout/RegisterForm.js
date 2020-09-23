@@ -42,7 +42,7 @@ const RegisterForm = (props) => {
           <div className="form-group">
             <div>
               <label htmlFor="name" className="register-form-item">
-                Name
+                Team Name
               </label>
             </div>
             <input

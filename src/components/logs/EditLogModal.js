@@ -51,7 +51,7 @@ const EditLogModal = (props) => {
         member,
         date: new Date(),
       };
-      console.log(updLog)
+      console.log(updLog);
 
       updateLog(updLog);
       toggle();
@@ -111,10 +111,10 @@ const EditLogModal = (props) => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="submit-log-btn" onClick={onSubmit}>
+          <button className="submit-btn" onClick={onSubmit}>
             Enter
           </button>{" "}
-          <button className="cancel-add-log-btn" onClick={toggle}>
+          <button className="cancel-add-btn" onClick={toggle}>
             Cancel
           </button>
         </ModalFooter>

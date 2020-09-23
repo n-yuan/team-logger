@@ -14,7 +14,7 @@ const MemberList = ({ getMembers, member: { members, loading } }) => {
   return (
     <div>
       <h4>Member List</h4>
-      <ul className="collection">
+      <ul className="row">
         {!loading &&
           members !== null &&
           members.map((member) => (

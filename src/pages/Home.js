@@ -19,6 +19,8 @@ const Home = (props) => {
       <Navbar />
 
       <div className="home-container">
+        <div className="background-img-left-corner"></div>
+       
         <div className="container">
           <Banner />
           <div className="row">

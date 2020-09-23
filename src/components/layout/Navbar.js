@@ -17,7 +17,7 @@ const Navbar = (props) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-container">
-        <div className="container-fluid">
+        <div className="container">
           <a href="#" className="navbar-brand">
             <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
             Team Logger

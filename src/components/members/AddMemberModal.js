@@ -21,17 +21,23 @@ const AddMemberModal = (props) => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [title, setTitle] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const onSubmit = () => {
     if (firstName === "" || lastName === "") {
       console.log("Please enter the first and last name");
       toggle();
     } else {
-      addMember({ firstName, lastName });
+      addMember({ firstName, lastName, title, email, phone });
       toggle();
       //Clear Fields
       setFirstName("");
       setLastName("");
+      setTitle("");
+      setEmail("");
+      setPhone("");
     }
   };
 
@@ -68,6 +74,33 @@ const AddMemberModal = (props) => {
               value={lastName}
               placeholder="Add lastname"
               onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+          <div className="input-field-add-member-title">
+            <input
+              type="text"
+              name="title"
+              value={title}
+              placeholder="Add title"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="input-field-add-member-email">
+            <input
+              type="text"
+              name="email"
+              value={email}
+              placeholder="Add email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="input-field-add-member-phone">
+            <input
+              type="text"
+              name="phone"
+              value={phone}
+              placeholder="Add phone"
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
         </ModalBody>

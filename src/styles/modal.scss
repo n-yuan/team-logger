@@ -160,7 +160,10 @@
   }
 }
 .input-field-add-member-firstname,
-.input-field-add-member-lastname {
+.input-field-add-member-lastname,
+.input-field-add-member-title,
+.input-field-add-member-phone,
+.input-field-add-member-email {
   input {
     margin-bottom: 20px;
     width: 400px;

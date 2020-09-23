@@ -1,15 +1,52 @@
 .member-item-container {
-  border-radius: 25px;
-  background-color: #fff;
+  // border-radius: 20px;
+  // background-color: #495967;
+  background-image: linear-gradient(#304352, #d7d2cc);
   box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
-  padding: 20px;
+  height: 200px;
   margin: 20px;
+  color: white;
+  overflow: hidden;
+  &:hover {
+    box-shadow: 2px -2px 7px 7px rgba(0, 0, 0, 0.06);
 
-  
-  
-  .trash-icon {
-    color: $primaryColor;
+    transform: skew(0deg, -2deg);
+  }
+  .member-card-circle {
+    color: #cda011;
+    display: inline;
+    position: relative;
+    left: -15px;
+  }
+  .member-card-name {
+    font-size: 20px;
     display: inline-block;
-    margin-left: 10px;
+    padding: 15px 30px;
+    font-style: italic;
+  }
+  .member-card-title {
+    padding: 5px 65px;
+    font-size: 16px;
+  }
+  .member-card-phone {
+    padding: 5px 65px;
+    font-size: 16px;
+  }
+  .member-card-email {
+    padding: 5px 65px;
+    font-size: 16px;
+  }
+  .badge-delete {
+    font-style: italic;
+    font-size: 12px;
+    color: rgb(231, 100, 13);
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+    &:hover {
+      transform: scale(1.1) skew(-8deg, 0deg);
+      cursor: pointer;
+    }
   }
 }

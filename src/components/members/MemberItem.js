@@ -8,10 +8,20 @@ const MemberItem = ({ member, deleteMember }) => {
     deleteMember(member._id);
   };
   return (
-    <div className="member-item-container">
-      {member.firstName} {member.lastName}
-      <div className="trash-icon" onClick={onDelete}>
-        <i className="far fa-trash-alt"></i>
+    <div className="col-lg-4 col-md-6">
+      <div className="member-item-container">
+        <div className="member-card-circle ">
+          <i class="fas fa-circle fa-2x"></i>
+        </div>
+        <div className="member-card-name">
+          {member.firstName} {member.lastName}
+        </div>
+        <div className="badge-delete" onClick={onDelete}>
+          DELETE
+        </div>
+        <div className="member-card-title">{member.title}</div>
+        <div className="member-card-email">{member.email}</div>
+        <div className="member-card-phone">{member.phone}</div>
       </div>
     </div>
   );

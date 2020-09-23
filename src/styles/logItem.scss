@@ -6,14 +6,48 @@
   box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
   padding: 20px;
   margin: 20px;
-
+  border: none;
+  &:hover {
+    box-shadow: 2px -2px 7px 7px rgba(0, 0, 0, 0.06);
+  
+  }
+  .badge-name {
+    background-color: $primaryColor;
+    font-size: 15px;
+    color: white;
+  }
+  .badge-delete {
+    font-style: italic;
+    font-size: 12px;
+    color: rgb(231, 100, 13);
+    float: right;
+    font-weight: 600;
+    &:hover {
+      transform: scale(1.1) skew(-8deg, 0deg);
+      cursor: pointer;
+    }
+  }
+  .log-message {
+    height: 100px;
+    overflow: hidden;
+    margin-top: 20px;
+    cursor: pointer;
+    .log-message-header {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+  .log-update-time {
+    font-size: 8px;
+    color: rgb(153, 151, 151);
+  }
   .orange-text {
     color: $alertColor;
   }
   .blue-text {
     color: $primaryColor;
   }
-  border: none;
+
   .trash-icon {
     color: $primaryColor;
     display: inline-block;

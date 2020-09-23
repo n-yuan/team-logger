@@ -9,25 +9,30 @@ const LogItems = ({ log, deleteLog, setCurrent }) => {
     deleteLog(log._id);
   };
   return (
-    <div className="log-item-container">
-      <span>ID #{log._id}</span>
-      <br />
-      <div
-        href=""
-        className={`${log.attention ? "orange-text" : "blue-text"}`}
-        onClick={() => {
-          setCurrent(log);
-        }}
-      >
-        {log.message}
-      </div>
-      <br />
-      <span>
-        Last updated by <span>{log.member}</span> on{" "}
-        <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
-      </span>
-      <div className="trash-icon" onClick={onDelete}>
-        <i className="far fa-trash-alt"></i>
+    <div className="col-lg-4 col-md-6">
+      <div className="log-item-container">
+        <span className="badge badge-name badge-pill">{log.member}</span>
+        <span className="badge-delete" onClick={onDelete}>
+          DELETE
+        </span>
+
+        <div className="log-message">
+          <div
+            className={`${log.attention ? "orange-text" : "blue-text"}`}
+            onClick={() => {
+              setCurrent(log);
+            }}
+          >
+            <span className="log-message-header">Logs:</span> {log.message}
+          </div>
+        </div>
+        <br />
+        <span className="log-update-time">
+          Last updated on:
+          <br />
+          <i class="far fa-calendar-times"></i>{" "}
+          <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
+        </span>
       </div>
     </div>
   );
