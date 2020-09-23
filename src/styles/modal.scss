@@ -111,7 +111,7 @@
   }
 }
 
-.submit-log-btn {
+.submit-btn {
   border: 2px solid $primaryColor;
   background-color: Transparent;
   border-radius: 25px;
@@ -132,7 +132,7 @@
   }
 }
 
-.cancel-add-log-btn {
+.cancel-add-btn {
   border: 2px solid $primaryColor;
   background-color: Transparent;
   border-radius: 25px;
@@ -157,5 +157,26 @@
   position: absolute;
   .toast-header {
     color: $alertColor;
+  }
+}
+.input-field-add-member-firstname,
+.input-field-add-member-lastname {
+  input {
+    margin-bottom: 20px;
+    width: 400px;
+    border-radius: 25px;
+    border: 1px rgba(128, 128, 128, 0.199) solid;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
+    padding: 15px 15px;
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+    }
+    &:hover {
+      border: 1.2px #4face5 solid;
+      box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2);
+    }
   }
 }

@@ -97,10 +97,10 @@ const AddLogModal = (props) => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="submit-log-btn" onClick={onSubmit}>
+          <button className="submit-btn" onClick={onSubmit}>
             Enter
           </button>{" "}
-          <button className="cancel-add-log-btn" onClick={toggle}>
+          <button className="cancel-add-btn" onClick={toggle}>
             Cancel
           </button>
         </ModalFooter>

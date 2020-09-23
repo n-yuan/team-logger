@@ -8,6 +8,7 @@ import store from "./redux/store";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Landing from "./pages/Landing";
+import Member from "./pages/Member";
 import "./styles/style.css";
 
 // import "./App.css";
@@ -18,6 +19,7 @@ const App = () => {
       <Router>
         <Switch>
           <PrivateRoute exact path="/home" component={Home} />
+          <PrivateRoute exact path="/member" component={Member} />
           <Route exact path="/about" component={About} />
           <Route exact path="/landing" component={Landing} />
         </Switch>

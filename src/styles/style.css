@@ -327,7 +327,7 @@
   font-style: italic;
   font-weight: 600; }
 
-.submit-log-btn {
+.submit-btn {
   border: 2px solid #50ace5;
   background-color: Transparent;
   border-radius: 25px;
@@ -336,15 +336,15 @@
   color: #50ace5;
   margin-top: 10px;
   width: 100px; }
-  .submit-log-btn:focus {
+  .submit-btn:focus {
     outline: 0;
     box-shadow: none;
     -webkit-appearance: none; }
-  .submit-log-btn:hover {
+  .submit-btn:hover {
     border: 1.2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
-.cancel-add-log-btn {
+.cancel-add-btn {
   border: 2px solid #50ace5;
   background-color: Transparent;
   border-radius: 25px;
@@ -353,11 +353,11 @@
   color: #50ace5;
   margin-top: 10px;
   width: 100px; }
-  .cancel-add-log-btn:focus {
+  .cancel-add-btn:focus {
     outline: 0;
     box-shadow: none;
     -webkit-appearance: none; }
-  .cancel-add-log-btn:hover {
+  .cancel-add-btn:hover {
     border: 1.2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
@@ -365,6 +365,24 @@
   position: absolute; }
   .toast .toast-header {
     color: rgba(216, 122, 122, 0.877); }
+
+.input-field-add-member-firstname input,
+.input-field-add-member-lastname input {
+  margin-bottom: 20px;
+  width: 400px;
+  border-radius: 25px;
+  border: 1px rgba(128, 128, 128, 0.199) solid;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.06);
+  padding: 15px 15px; }
+  .input-field-add-member-firstname input:focus,
+  .input-field-add-member-lastname input:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .input-field-add-member-firstname input:hover,
+  .input-field-add-member-lastname input:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
 .log-item-container {
   border-radius: 25px;
@@ -378,6 +396,37 @@
   .log-item-container .blue-text {
     color: #50ace5; }
   .log-item-container .trash-icon {
+    color: #50ace5;
+    display: inline-block;
+    margin-left: 10px; }
+
+.add-member-btn-container .add-member-btn-container {
+  display: flex;
+  justify-content: flex-end; }
+.add-member-btn-container .add-member-btn {
+  border: 2px solid #50ace5;
+  background-color: Transparent;
+  border-radius: 25px;
+  padding: 6px 20px;
+  font-size: 15px;
+  color: #50ace5;
+  margin-top: 20px;
+  width: 200px; }
+  .add-member-btn-container .add-member-btn:focus {
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .add-member-btn-container .add-member-btn:hover {
+    border: 1.2px #4face5 solid;
+    box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
+
+.member-item-container {
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin: 20px; }
+  .member-item-container .trash-icon {
     color: #50ace5;
     display: inline-block;
     margin-left: 10px; }

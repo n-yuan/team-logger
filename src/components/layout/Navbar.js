@@ -3,6 +3,7 @@ import Logo from "../../images/Logo.png";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/authAction";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   const {
@@ -39,37 +40,39 @@ const Navbar = (props) => {
             {isAuthenticated && (
               <ul className="nav-log-member navbar-nav mr-auto">
                 <li className="nav-item">
-                  <a
-                    href=""
+                  <Link
+                    to="/home"
                     className="nav-link"
                     // onClick={() => props.onClick("landing-image")}
                   >
                     Logs
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href=""
+                  <Link
+                    to="/member"
                     className="nav-link"
                     // onClick={() => props.onClick("landing-image")}
                   >
                     Members
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
 
             {isAuthenticated ? (
               <ul className="navbar-nav ml-auto">
-              <div className="logout-item">
-                <li>
-                  <li className="logout-greeting">Hello {user && user.name}</li>
-                  <a onClick={onLogout} href="#!">
-                    <i className="fas fa-sign-out-alt fa-lg"></i>
-                    <span className="hide-sm logout-caption">Logout</span>
-                  </a>
-                </li>
-              </div>
+                <div className="logout-item">
+                  <li>
+                    <li className="logout-greeting">
+                      Hello {user && user.name}
+                    </li>
+                    <a onClick={onLogout} href="#!">
+                      <i className="fas fa-sign-out-alt fa-lg"></i>
+                      <span className="hide-sm logout-caption">Logout</span>
+                    </a>
+                  </li>
+                </div>
               </ul>
             ) : (
               <ul className="navbar-nav ml-auto">

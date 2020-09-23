@@ -1,9 +1,7 @@
 import React, { Fragment, useEffect } from "react";
-import AddLogModal from "../components/logs/AddLogModal";
-import EditLogModal from "../components/logs/EditLogModal";
-import SearchBar from "../components/layout/SearchBar";
+import AddMemberModal from "../components/members/AddMemberModal";
+import MemberList from "../components/members/MemberList";
 import Banner from "../components/layout/Banner";
-import Logs from "../components/logs/Logs";
 import Navbar from "../components/layout/Navbar";
 import { connect } from "react-redux";
 import { loadUser } from "../redux/actions/authAction";
@@ -21,16 +19,8 @@ const Home = (props) => {
       <div className="home-container">
         <div className="container">
           <Banner />
-          <div className="row">
-            <div className="col-lg-6">
-              <SearchBar />
-            </div>
-            <div className="col-lg-6">
-              <AddLogModal />
-            </div>
-          </div>
-          <Logs />
-          <EditLogModal />
+          <AddMemberModal />
+          <MemberList />
         </div>
       </div>
     </Fragment>

@@ -1,0 +1,26 @@
+.add-member-btn-container {
+  .add-member-btn-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .add-member-btn {
+    border: 2px solid $primaryColor;
+    background-color: Transparent;
+    border-radius: 25px;
+    padding: 6px 20px;
+    font-size: 15px;
+    color: $primaryColor;
+    margin-top: 20px;
+    width: 200px;
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+    }
+    &:hover {
+      border: 1.2px #4face5 solid;
+      box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2);
+    }
+  }
+}
