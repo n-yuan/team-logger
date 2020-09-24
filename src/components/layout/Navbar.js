@@ -18,23 +18,17 @@ const Navbar = (props) => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-container">
         <div className="container">
-          <a href="#" className="navbar-brand">
-            <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
-            Team Logger
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="custom-toggler-icon">
-              <i className="fas fa-bars"></i>
-            </span>
-          </button>
+          {isAuthenticated ? (
+            <a href="/home" className="navbar-brand-home">
+              <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
+              Team Logger
+            </a>
+          ) : (
+            <a href="/landing" className="navbar-brand-landing">
+              <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
+              Team Logger
+            </a>
+          )}
 
           <div className="collapse navbar-collapse" id="navbarResponsive">
             {isAuthenticated && (
@@ -67,7 +61,7 @@ const Navbar = (props) => {
                     <li className="logout-greeting">
                       Hello {user && user.name}
                     </li>
-                    <a onClick={onLogout} href="#!">
+                    <a onClick={onLogout} href="#!" className="logout-caption-container">
                       <i className="fas fa-sign-out-alt fa-lg"></i>
                       <span className="hide-sm logout-caption">Logout</span>
                     </a>
@@ -75,7 +69,7 @@ const Navbar = (props) => {
                 </div>
               </ul>
             ) : (
-              <ul className="navbar-nav ml-auto">
+              <ul className="navbar-nav ml-auto nav-home">
                 <li className="nav-item">
                   <a
                     href=""

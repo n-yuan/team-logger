@@ -1,8 +1,22 @@
 @import "./variables.scss";
 .navbar-container {
-  .navbar-brand {
-    color: rgb(68,83,96);
+  .navbar-brand-landing {
+    color: $primaryColor;
     font-weight: 700;
+    font-size: 23px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .navbar-brand-home {
+    color: rgb(68, 83, 96);
+    font-weight: 700;
+    font-size: 23px;
+    margin-right: 35px;
+    &:hover {
+      text-decoration: none;
+    }
   }
   .navbar-toggler {
     &:focus {
@@ -20,22 +34,31 @@
       }
     }
   }
-
-  .nav-link {
-    color: rgb(68,83,96);
-    margin: 5px 35px;
-    font-size: 20px;
+  .nav-log-member {
+    .nav-link {
+      color: rgb(68, 83, 96);
+      margin: 5px 35px;
+      font-size: 23px;
+      font-weight: 400;
+    }
   }
-
+  .nav-home {
+    .nav-link {
+      color: $primaryColor;
+      margin: 5px 35px;
+      font-size: 23px;
+      font-weight: 400;
+    }
+  }
   .nav-btn {
     border: 2px solid $primaryColor;
     background-color: Transparent;
     border-radius: 25px;
     padding: 0 25px;
-    font-size: 15px;
+    font-size: 18px;
     color: $primaryColor;
     height: 35px;
-    margin: 10px;
+    margin: 10px 10px 10px 35px;
     &:focus {
       outline: 0;
       box-shadow: none;
@@ -48,22 +71,28 @@
   }
   .logout-item {
     display: inline-block;
-    margin-top:17px;
+    .logout-caption-container {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     .fa-sign-out-alt {
-      color: $primaryColor;
+      color: rgb(68, 83, 96);
       margin-right: 3px;
     }
     .logout-caption {
-      color: $primaryColor;
-      font-size: 16px;
+      color: rgb(68, 83, 96);
+      font-size: 18px;
     }
-    .logout-greeting{
+    .logout-greeting {
       display: inline-block;
       margin-right: 8px;
-      color: $primaryColor;
+      color: rgb(68, 83, 96);
+      font-size: 18px;
     }
   }
-  .landing-nav{
+  .landing-nav {
     display: inline-block;
   }
 }

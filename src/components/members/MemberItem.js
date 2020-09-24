@@ -10,6 +10,7 @@ const MemberItem = ({ member, deleteMember }) => {
   return (
     <div className="col-lg-4 col-md-6">
       <div className="member-item-container">
+      
         <div className="member-card-circle ">
           <i class="fas fa-circle fa-2x"></i>
         </div>

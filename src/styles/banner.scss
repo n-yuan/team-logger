@@ -7,11 +7,15 @@
   position: relative;
   .banner-header {
     margin: 30px 80px;
+    font-style: italic;
+    .banner-greeting {
+      font-size: 40px;
+    }
   }
   .office-work-image {
     width: 210px;
-    margin-left:140px;
+    margin-left: 140px;
     position: absolute;
-    top:-35px;
+    top: -35px;
   }
 }

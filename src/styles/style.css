@@ -1,6 +1,16 @@
-.navbar-container .navbar-brand {
+.navbar-container .navbar-brand-landing {
+  color: #50ace5;
+  font-weight: 700;
+  font-size: 23px; }
+  .navbar-container .navbar-brand-landing:hover {
+    text-decoration: none; }
+.navbar-container .navbar-brand-home {
   color: #445360;
-  font-weight: 700; }
+  font-weight: 700;
+  font-size: 23px;
+  margin-right: 35px; }
+  .navbar-container .navbar-brand-home:hover {
+    text-decoration: none; }
 .navbar-container .navbar-toggler:focus {
   outline: 0;
   box-shadow: none;
@@ -12,19 +22,25 @@
     outline: 0;
     box-shadow: none;
     -webkit-appearance: none; }
-.navbar-container .nav-link {
+.navbar-container .nav-log-member .nav-link {
   color: #445360;
   margin: 5px 35px;
-  font-size: 20px; }
+  font-size: 23px;
+  font-weight: 400; }
+.navbar-container .nav-home .nav-link {
+  color: #50ace5;
+  margin: 5px 35px;
+  font-size: 23px;
+  font-weight: 400; }
 .navbar-container .nav-btn {
   border: 2px solid #50ace5;
   background-color: Transparent;
   border-radius: 25px;
   padding: 0 25px;
-  font-size: 15px;
+  font-size: 18px;
   color: #50ace5;
   height: 35px;
-  margin: 10px; }
+  margin: 10px 10px 10px 35px; }
   .navbar-container .nav-btn:focus {
     outline: 0;
     box-shadow: none;
@@ -33,18 +49,20 @@
     border: 2px #4face5 solid;
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 .navbar-container .logout-item {
-  display: inline-block;
-  margin-top: 17px; }
+  display: inline-block; }
+  .navbar-container .logout-item .logout-caption-container:hover {
+    text-decoration: none; }
   .navbar-container .logout-item .fa-sign-out-alt {
-    color: #50ace5;
+    color: #445360;
     margin-right: 3px; }
   .navbar-container .logout-item .logout-caption {
-    color: #50ace5;
-    font-size: 16px; }
+    color: #445360;
+    font-size: 18px; }
   .navbar-container .logout-item .logout-greeting {
     display: inline-block;
     margin-right: 8px;
-    color: #50ace5; }
+    color: #445360;
+    font-size: 18px; }
 .navbar-container .landing-nav {
   display: inline-block; }
 
@@ -197,7 +215,10 @@
   z-index: 1;
   position: relative; }
   .banner-container .banner-header {
-    margin: 30px 80px; }
+    margin: 30px 80px;
+    font-style: italic; }
+    .banner-container .banner-header .banner-greeting {
+      font-size: 40px; }
   .banner-container .office-work-image {
     width: 210px;
     margin-left: 140px;
@@ -476,22 +497,40 @@
     box-shadow: -2px 1px 2px 5px rgba(79, 172, 229, 0.2); }
 
 .member-item-container {
-  background-image: linear-gradient(#304352, #d7d2cc);
-  box-shadow: -2px 1px 2px 5px rgba(0, 0, 0, 0.06);
+  background-image: linear-gradient(#f5f7fa, #c3cfe2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   height: 200px;
   margin: 20px;
-  color: white;
+  color: wrgb(68, 83, 96);
   overflow: hidden; }
   .member-item-container:hover {
-    box-shadow: 2px -2px 7px 7px rgba(0, 0, 0, 0.06);
-    transform: skew(0deg, -2deg); }
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  .member-item-container::before, .member-item-container::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: "";
+    pointer-events: none; }
+  .member-item-container::before {
+    transform-origin: left top; }
+  .member-item-container::after {
+    transform-origin: right bottom; }
+  .member-item-container:hover::before, .member-item-container:hover::after, .member-item-container:focus::before, .member-item-container:focus::after {
+    transform: scale3d(1, 1, 1); }
   .member-item-container .member-card-circle {
-    color: #cda011;
+    color: #445360;
     display: inline;
     position: relative;
-    left: -15px; }
+    left: -15px;
+    top: 6px; }
   .member-item-container .member-card-name {
-    font-size: 20px;
+    font-size: 24px;
     display: inline-block;
     padding: 15px 30px;
     font-style: italic; }
@@ -507,7 +546,7 @@
   .member-item-container .badge-delete {
     font-style: italic;
     font-size: 12px;
-    color: #e7640d;
+    color: #445360;
     float: right;
     margin-top: 20px;
     margin-right: 20px;
@@ -515,5 +554,18 @@
     .member-item-container .badge-delete:hover {
       transform: scale(1.1) skew(-8deg, 0deg);
       cursor: pointer; }
+
+.background-img-left-corner:after {
+  height: 500px;
+  content: "";
+  width: 1000px;
+  top: -30px;
+  left: -180px;
+  position: absolute;
+  z-index: -1;
+  background: url("../images/bg-left-corner.png") no-repeat;
+  background-size: 650px;
+  display: inline-block;
+  opacity: 0.7; }
 
 /*# sourceMappingURL=style.css.map */
