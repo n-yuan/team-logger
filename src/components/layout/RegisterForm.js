@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { register } from "../../redux/actions/authAction";
+import { register, clearErrors } from "../../redux/actions/authAction";
+import { setAlert } from "../../redux/actions/alertAction";
 
 const RegisterForm = (props) => {
-  const { register, isAuthenticated, routeHistory } = props;
+  const {
+    register,
+    isAuthenticated,
+    routeHistory,
+    error,
+    setAlert,
+    clearErrors,
+  } = props;
   useEffect(() => {
     if (isAuthenticated) {
       routeHistory.push("/home");
     }
+    if (error === "User already exists") {
+      setAlert(error, "danger");
+      clearErrors();
+    }
     //eslint-disable-next-line
-  }, [isAuthenticated, props.history]);
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
@@ -24,12 +36,17 @@ const RegisterForm = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    register({
-      name,
-      email,
-      password,
-      password2,
-    });
+    if (name === " " || email === "" || password === "") {
+      setAlert("Please enter all fields", "danger");
+    } else if (password !== password2) {
+      setAlert("Passwords do not match", "danger");
+    } else {
+      register({
+        name,
+        email,
+        password,
+      });
+    }
   };
 
   return (
@@ -113,4 +130,4 @@ const RegisterForm = (props) => {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
-export default connect(mapStateToProps, { register })(RegisterForm);
+export default connect(mapStateToProps, { register, setAlert })(RegisterForm);

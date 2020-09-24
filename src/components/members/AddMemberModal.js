@@ -29,6 +29,7 @@ const AddMemberModal = (props) => {
     if (firstName === "" || lastName === "") {
       console.log("Please enter the first and last name");
       toggle();
+      toggleMember();
     } else {
       addMember({ firstName, lastName, title, email, phone });
       toggle();
@@ -117,8 +118,7 @@ const AddMemberModal = (props) => {
       <div>
         <Toast isOpen={show}>
           <ToastHeader toggle={toggleMember}>
-            <i class="fas fa-exclamation-circle"></i> Please enter logs and
-            select members.
+            <i class="fas fa-exclamation-circle"></i> Please enter members.
           </ToastHeader>
         </Toast>
       </div>

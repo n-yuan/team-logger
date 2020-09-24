@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "../../redux/actions/authAction";
+import { login, clearErrors } from "../../redux/actions/authAction";
+import { setAlert } from "../../redux/actions/alertAction";
 
 const LoginForm = (props) => {
-  const { isAuthenticated, routeHistory } = props;
-  console.log(routeHistory);
+  const {
+    isAuthenticated,
+    routeHistory,
+    error,
+    login,
+    setAlert,
+    clearErrors,
+  } = props;
   useEffect(() => {
     if (isAuthenticated) {
       routeHistory.push("/home");
     }
+    if (error === "Invalid Credentials") {
+      setAlert(error, "danger");
+      clearErrors();
+    }
     //eslint-disable-next-line
-  }, [isAuthenticated, props.history]);
-
-  const { login } = props;
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     email: "",
@@ -26,11 +34,15 @@ const LoginForm = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("login");
-    login({
-      password,
-      email,
-    });
+    if (email === "" || password === "") {
+      console.log("Alert Login empty")
+      setAlert("Please fill in all fields", "danger");
+    } else {
+      login({
+        password,
+        email,
+      });
+    }
   };
 
   return (
@@ -82,4 +94,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { login })(LoginForm);
+export default connect(mapStateToProps, { login, setAlert })(LoginForm);

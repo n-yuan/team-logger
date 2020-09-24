@@ -177,7 +177,7 @@
   position: relative;
   height: 100%;
   animation: fadeInRight;
-  animation-duration: .5s; }
+  animation-duration: 0.5s; }
   .login-form-container .login-form-item {
     font-size: 16px;
     color: grey; }
@@ -206,6 +206,15 @@
     margin-top: 30px;
     width: 100%;
     justify-content: center; }
+
+.danger {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  background: #dd5c69;
+  color: #fff;
+  padding: 10px 20px;
+  opacity: 0.6; }
 
 .banner-container {
   border: none;
