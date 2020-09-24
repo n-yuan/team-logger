@@ -4,7 +4,7 @@ import LogItem from "./LogItems";
 import Preloader from "../layout/Preloader";
 import PropTypes from "prop-types";
 import { getLogs } from "../../redux/actions/logActions";
-import { useState } from "react";
+
 
 const Logs = ({ log: { logs, loading, filtered }, getLogs }) => {
   useEffect(() => {

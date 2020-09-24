@@ -220,10 +220,10 @@
     .banner-container .banner-header .banner-greeting {
       font-size: 40px; }
   .banner-container .office-work-image {
-    width: 210px;
+    width: 240px;
     margin-left: 140px;
     position: absolute;
-    top: -35px; }
+    top: -20px; }
 
 .home-container {
   background-color: #f9f9f9;
