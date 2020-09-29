@@ -79,21 +79,4 @@
       cursor: pointer;
     }
   }
-
-}
-//Member list
-.background-img-left-corner {
-  &:after {
-    height: 500px;
-    content: "";
-    width: 1000px;
-    top: -30px;
-    left: -180px;
-    position: absolute;
-    z-index: -1;
-    background: url("../images/bg-left-corner.png") no-repeat;
-    background-size: 650px;
-    display: inline-block;
-    opacity: 0.7;
-  }
 }

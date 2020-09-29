@@ -13,13 +13,13 @@ const MemberList = ({ getMembers, member: { members, loading } }) => {
   return (
     <div>
       <div className="background-img-left-corner"></div>
-      <ul className="row">
+      <div className="row">
         {!loading &&
           members !== null &&
           members.map((member) => (
             <MemberItem member={member} key={member._id} />
           ))}
-      </ul>
+      </div>
     </div>
   );
 };
