@@ -14,7 +14,7 @@ const RegisterForm = (props) => {
   } = props;
   useEffect(() => {
     if (isAuthenticated) {
-      routeHistory.push("/home");
+      routeHistory.push("/");
     }
     if (error === "User already exists") {
       setAlert(error, "danger");

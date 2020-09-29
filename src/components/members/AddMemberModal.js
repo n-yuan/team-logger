@@ -2,37 +2,27 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addMember } from "../../redux/actions/memberActions";
 import PropTypes from "prop-types";
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Toast,
-  ToastHeader,
-} from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { setAlert } from "../../redux/actions/alertAction";
 
 const AddMemberModal = (props) => {
-  const { className, addMember } = props;
+  const { className, addMember, setAlert } = props;
   const [modal, setModal] = useState(false);
-  const [show, setShow] = useState(false);
-
-  const toggle = () => setModal(!modal);
-  const toggleMember = () => setShow(!show);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  const toggleMemberModal = () => setModal(!modal);
+
   const onSubmit = () => {
     if (firstName === "" || lastName === "") {
-      console.log("Please enter the first and last name");
-      toggle();
-      toggleMember();
+      toggleMemberModal();
+      setAlert("Please enter first name and last name", "warning");
     } else {
       addMember({ firstName, lastName, title, email, phone });
-      toggle();
+      toggleMemberModal();
       //Clear Fields
       setFirstName("");
       setLastName("");
@@ -45,7 +35,7 @@ const AddMemberModal = (props) => {
   return (
     <div className="add-member-btn-container">
       <div className="add-member-btn-container">
-        <button className="add-member-btn" onClick={toggle}>
+        <button className="add-member-btn" onClick={toggleMemberModal}>
           Add member
         </button>
       </div>
@@ -54,10 +44,10 @@ const AddMemberModal = (props) => {
         isOpen={modal}
         modalTransition={{ timeout: 700 }}
         backdropTransition={{ timeout: 1300 }}
-        toggle={toggle}
+        toggle={toggleMemberModal}
         className={className}
       >
-        <ModalHeader toggle={toggle}>Enter member</ModalHeader>
+        <ModalHeader toggle={toggleMemberModal}>Enter member</ModalHeader>
         <ModalBody>
           <div className="input-field-add-member-firstname">
             <input
@@ -109,19 +99,11 @@ const AddMemberModal = (props) => {
           <button className="submit-btn" onClick={onSubmit}>
             Enter
           </button>{" "}
-          <button className="cancel-add-btn" onClick={toggle}>
+          <button className="cancel-add-btn" onClick={toggleMemberModal}>
             Cancel
           </button>
         </ModalFooter>
       </Modal>
-
-      <div>
-        <Toast isOpen={show}>
-          <ToastHeader toggle={toggleMember}>
-            <i class="fas fa-exclamation-circle"></i> Please enter members.
-          </ToastHeader>
-        </Toast>
-      </div>
     </div>
   );
 };
@@ -129,4 +111,4 @@ const AddMemberModal = (props) => {
 AddMemberModal.propTypes = {
   addMember: PropTypes.func.isRequired,
 };
-export default connect(null, { addMember })(AddMemberModal);
+export default connect(null, { addMember, setAlert })(AddMemberModal);

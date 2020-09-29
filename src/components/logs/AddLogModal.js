@@ -1,32 +1,25 @@
 import React, { useState } from "react";
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Toast,
-  ToastHeader,
-} from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLog } from "../../redux/actions/logActions";
 import MemberSelectOptions from "../members/MemberSelectOptions";
+import { setAlert } from "../../redux/actions/alertAction";
 
 const AddLogModal = (props) => {
-  const { className } = props;
-  const [modal, setModal] = useState(false);
-  const [show, setShow] = useState(false);
+  const { className, setAlert } = props;
 
-  const toggle = () => setModal(!modal);
-  const toggleLog = () => setShow(!show);
+  const [modal, setModal] = useState(false);
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [member, setMember] = useState("");
 
+  const toggleLogModal = () => setModal(!modal);
+
   const onSubmit = () => {
     if (message === "" || member === "") {
-      toggle();
-      toggleLog();
+      toggleLogModal();
+      setAlert("Please enter logs and select members", "warning");
     } else {
       const newLog = {
         message,
@@ -35,7 +28,7 @@ const AddLogModal = (props) => {
         date: new Date(),
       };
       props.addLog(newLog);
-      toggle();
+      toggleLogModal();
       //Clear Fields
       setMessage("");
       setMember("");
@@ -46,7 +39,7 @@ const AddLogModal = (props) => {
   return (
     <div className="add-btn-container">
       <div className="add-log-btn-container">
-        <button className="add-log-btn" onClick={toggle}>
+        <button className="add-log-btn" onClick={toggleLogModal}>
           Add log
         </button>
       </div>
@@ -55,10 +48,10 @@ const AddLogModal = (props) => {
         isOpen={modal}
         modalTransition={{ timeout: 700 }}
         backdropTransition={{ timeout: 1300 }}
-        toggle={toggle}
+        toggle={toggleLogModal}
         className={className}
       >
-        <ModalHeader toggle={toggle}>Enter Team Log</ModalHeader>
+        <ModalHeader toggle={toggleLogModal}>Enter Team Log</ModalHeader>
         <ModalBody>
           <div className="input-field-add-log">
             <textarea
@@ -100,20 +93,11 @@ const AddLogModal = (props) => {
           <button className="submit-btn" onClick={onSubmit}>
             Enter
           </button>{" "}
-          <button className="cancel-add-btn" onClick={toggle}>
+          <button className="cancel-add-btn" onClick={toggleLogModal}>
             Cancel
           </button>
         </ModalFooter>
       </Modal>
-
-      <div>
-        <Toast isOpen={show}>
-          <ToastHeader toggle={toggleLog}>
-            <i class="fas fa-exclamation-circle"></i> Please enter logs and
-            select members.
-          </ToastHeader>
-        </Toast>
-      </div>
     </div>
   );
 };
@@ -122,4 +106,4 @@ AddLogModal.propTypes = {
   addLog: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addLog })(AddLogModal);
+export default connect(null, { addLog, setAlert })(AddLogModal);

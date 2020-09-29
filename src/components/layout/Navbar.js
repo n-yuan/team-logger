@@ -35,7 +35,7 @@ const Navbar = (props) => {
               <ul className="nav-log-member navbar-nav mr-auto">
                 <li className="nav-item">
                   <Link
-                    to="/home"
+                    to="/"
                     className="nav-link"
                     // onClick={() => props.onClick("landing-image")}
                   >

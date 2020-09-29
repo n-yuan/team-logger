@@ -216,6 +216,15 @@
   padding: 10px 20px;
   opacity: 0.6; }
 
+.warning {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  background: #e7640d;
+  color: #fff;
+  padding: 10px 20px;
+  opacity: 0.6; }
+
 .banner-container {
   border: none;
   border-radius: 25px;
@@ -230,8 +239,8 @@
       font-size: 40px; }
   .banner-container .office-work-image {
     width: 240px;
-    margin-left: 140px;
-    position: absolute;
+    margin-left: 120px;
+    position: relative;
     top: -20px; }
 
 .home-container {

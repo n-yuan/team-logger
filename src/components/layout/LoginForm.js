@@ -14,7 +14,7 @@ const LoginForm = (props) => {
   } = props;
   useEffect(() => {
     if (isAuthenticated) {
-      routeHistory.push("/home");
+      routeHistory.push("/");
     }
     if (error === "Invalid Credentials") {
       setAlert(error, "danger");

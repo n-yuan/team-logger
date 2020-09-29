@@ -13,7 +13,6 @@ const MemberList = ({ getMembers, member: { members, loading } }) => {
 
   return (
     <div>
-      <h4>Member List</h4>
       <div className="background-img-left-corner"></div>
       <ul className="row">
         {!loading &&
