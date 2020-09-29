@@ -51,7 +51,6 @@ const EditLogModal = (props) => {
         member,
         date: new Date(),
       };
-      console.log(updLog);
 
       updateLog(updLog);
       toggle();

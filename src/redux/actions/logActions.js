@@ -39,7 +39,6 @@ export const getLogs = () => async (dispatch) => {
 // Add new log
 export const addLog = (log) => async (dispatch) => {
   try {
-    console.log("add logs action");
     setLoading();
     const res = await fetch("https://team-logger-api.herokuapp.com/api/logs", {
       method: "POST",
@@ -108,7 +107,6 @@ export const clearCurrent = () => {
 
 // Update log on server
 export const updateLog = (log) => async (dispatch) => {
-  console.log(log)
   try {
     setLoading();
     const res = await fetch(
@@ -124,7 +122,6 @@ export const updateLog = (log) => async (dispatch) => {
     );
 
     const data = await res.json();
-    console.log(data)
     dispatch({
       type: UPDATE_LOG,
       payload: data,

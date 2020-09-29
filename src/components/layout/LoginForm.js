@@ -35,7 +35,6 @@ const LoginForm = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
-      console.log("Alert Login empty")
       setAlert("Please fill in all fields", "danger");
     } else {
       login({

@@ -20,7 +20,6 @@ export const loadUser = () => async (dispatch) => {
       },
     });
     const data = await res.json();
-    console.log(data)
     dispatch({ type: USER_LOADED, payload: data });
   } catch (error) {
     dispatch({ type: AUTH_ERROR });
@@ -74,8 +73,6 @@ export const register = (formData) => async (dispatch) => {
 //Login User
 export const login = (formData) => async (dispatch) => {
   try {
-    console.log("Login action");
-    console.log(formData);
     const res = await fetch("https://team-logger-api.herokuapp.com/api/auth", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -83,9 +80,7 @@ export const login = (formData) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(res);
     const data = await res.json();
-    console.log(data);
     if (data.token) {
       dispatch({
         type: LOGIN_SUCCESS,

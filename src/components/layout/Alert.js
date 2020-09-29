@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 const Alerts = (props) => {
   const { alert } = props;
 
-  console.log(alert);
-
   return (
     alert.length > 0 &&
     alert.map((alert) => (
