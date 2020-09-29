@@ -7,10 +7,11 @@ import { connect } from "react-redux";
 import { loadUser } from "../redux/actions/authAction";
 import PropTypes from "prop-types";
 
-const Home = (props) => {
+const Member = (props) => {
   const { loadUser } = props;
   useEffect(() => {
     loadUser();
+    //eslint-disable-next-line
   }, []);
   return (
     <Fragment>
@@ -26,7 +27,7 @@ const Home = (props) => {
   );
 };
 
-Home.propTypes = {
+Member.propTypes = {
   loadUser: PropTypes.func.isRequired,
 };
-export default connect(null, { loadUser })(Home);
+export default connect(null, { loadUser })(Member);

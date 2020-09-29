@@ -75,11 +75,12 @@ const Navbar = (props) => {
                     Home
                   </a>
                 </li>
-                <li className="nav-item">
+                {/* Hide Contact Us */}
+                {/* <li className="nav-item">
                   <a href="" className="nav-link">
                     Contact us
                   </a>
-                </li>
+                </li> */}
                 <button
                   className="nav-btn"
                   onClick={() => props.onClick("login")}

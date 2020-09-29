@@ -66,7 +66,7 @@ const RegisterForm = (props) => {
               type="text"
               name="name"
               value={name}
-              required
+              required={true}
               onChange={onChange}
             />
           </div>
@@ -80,7 +80,7 @@ const RegisterForm = (props) => {
               type="email"
               name="email"
               value={email}
-              reuqired
+              required={true}
               onChange={onChange}
             />
           </div>
@@ -94,7 +94,7 @@ const RegisterForm = (props) => {
               type="password"
               name="password"
               value={password}
-              reuqired
+              required={true}
               minLength="6"
               onChange={onChange}
             />
@@ -109,7 +109,7 @@ const RegisterForm = (props) => {
               type="password"
               name="password2"
               value={password2}
-              reuqired
+              required={true}
               minLength="6"
               onChange={onChange}
             />

@@ -30,7 +30,7 @@ const LogItems = ({ log, deleteLog, setCurrent }) => {
         <span className="log-update-time">
           Last updated on:
           <br />
-          <i class="far fa-calendar-times"></i>{" "}
+          <i className="far fa-calendar-times"></i>{" "}
           <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
       </div>

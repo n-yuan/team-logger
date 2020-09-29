@@ -13,6 +13,7 @@ const Home = (props) => {
   const { loadUser } = props;
   useEffect(() => {
     loadUser();
+    //eslint-disable-next-line
   }, []);
   return (
     <Fragment>
