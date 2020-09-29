@@ -8,7 +8,6 @@ const PrivateRoute = ({
   component: Component,
   ...rest
 }) => {
-  console.log("private-route")
   return (
     <Route
       {...rest}

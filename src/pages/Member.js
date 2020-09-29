@@ -15,7 +15,6 @@ const Home = (props) => {
   return (
     <Fragment>
       <Navbar />
-
       <div className="home-container">
         <div className="container">
           <Banner />

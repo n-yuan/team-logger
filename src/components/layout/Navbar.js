@@ -34,20 +34,12 @@ const Navbar = (props) => {
             {isAuthenticated && (
               <ul className="nav-log-member navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link
-                    to="/"
-                    className="nav-link"
-                    // onClick={() => props.onClick("landing-image")}
-                  >
+                  <Link to="/" className="nav-link">
                     Logs
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    to="/member"
-                    className="nav-link"
-                    // onClick={() => props.onClick("landing-image")}
-                  >
+                  <Link to="/member" className="nav-link">
                     Members
                   </Link>
                 </li>
@@ -61,7 +53,11 @@ const Navbar = (props) => {
                     <li className="logout-greeting">
                       Hello {user && user.name}
                     </li>
-                    <a onClick={onLogout} href="#!" className="logout-caption-container">
+                    <a
+                      onClick={onLogout}
+                      href="#!"
+                      className="logout-caption-container"
+                    >
                       <i className="fas fa-sign-out-alt fa-lg"></i>
                       <span className="hide-sm logout-caption">Logout</span>
                     </a>

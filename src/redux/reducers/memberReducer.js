@@ -29,7 +29,9 @@ export default (state = initialState, action) => {
     case DELETE_MEMBER:
       return {
         ...state,
-        members: state.members.filter((member) => member._id !== action.payload),
+        members: state.members.filter(
+          (member) => member._id !== action.payload
+        ),
       };
     case MEMBERS_ERROR:
       return {

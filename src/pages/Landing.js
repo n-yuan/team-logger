@@ -38,10 +38,8 @@ const Landing = (props) => {
                 GET START
               </button>
             </div>
-
             <div className="background-img-work"></div>
           </div>
-
           <div className="col-lg-6">
             {currentForm === "register" ? (
               <RegisterForm routeHistory={history} />

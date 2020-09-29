@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./routing/PrivateRoute";
@@ -12,8 +12,6 @@ import Member from "./pages/Member";
 import Alert from "./components/layout/Alert";
 import "./styles/style.css";
 
-// import "./App.css";
-
 const App = () => {
   return (
     <Provider store={store}>
@@ -25,7 +23,6 @@ const App = () => {
           <Route exact path="/about" component={About} />
           <Route exact path="/landing" component={Landing} />
         </Switch>
-        {/* Main Page */}
       </Router>
     </Provider>
   );

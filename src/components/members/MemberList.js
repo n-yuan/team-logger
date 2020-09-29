@@ -7,7 +7,6 @@ import MemberItem from "./MemberItem";
 const MemberList = ({ getMembers, member: { members, loading } }) => {
   useEffect(() => {
     getMembers();
-
     // eslint-disable-next-line
   }, []);
 
