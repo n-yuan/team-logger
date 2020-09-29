@@ -5,6 +5,7 @@ import SearchBar from "../components/layout/SearchBar";
 import Banner from "../components/layout/Banner";
 import Logs from "../components/logs/Logs";
 import Navbar from "../components/layout/Navbar";
+import Background from "../components/layout/Background";
 import { connect } from "react-redux";
 import { loadUser } from "../redux/actions/authAction";
 import PropTypes from "prop-types";
@@ -17,6 +18,7 @@ const Home = (props) => {
   }, []);
   return (
     <Fragment>
+      <Background />
       <Navbar />
       <div className="home-container">
         <div className="background-img-left-corner"></div>

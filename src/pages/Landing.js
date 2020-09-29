@@ -3,6 +3,7 @@ import Navbar from "../components/layout/Navbar";
 import LandingImage from "../images/Landing-img.svg";
 import RegisterForm from "../components/layout/RegisterForm";
 import LoginForm from "../components/layout/LoginForm";
+import Background from "../components/layout/Background";
 
 const Landing = (props) => {
   const [currentForm, setCurrentForm] = useState(null);
@@ -15,6 +16,7 @@ const Landing = (props) => {
 
   return (
     <div className="landing-page-wrapper">
+      <Background />
       <div className="background-img-left-corner"></div>
       <Navbar onClick={onSetCurrentForm} />
       <div className="container landing-container">

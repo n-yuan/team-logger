@@ -3,6 +3,7 @@ import AddMemberModal from "../components/members/AddMemberModal";
 import MemberList from "../components/members/MemberList";
 import Banner from "../components/layout/Banner";
 import Navbar from "../components/layout/Navbar";
+import Background from "../components/layout/Background";
 import { connect } from "react-redux";
 import { loadUser } from "../redux/actions/authAction";
 import PropTypes from "prop-types";
@@ -15,6 +16,7 @@ const Member = (props) => {
   }, []);
   return (
     <Fragment>
+      <Background />
       <Navbar />
       <div className="home-container">
         <div className="container">
