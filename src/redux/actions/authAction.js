@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   CLEAR_ERRORS,
+  SET_LOADING,
 } from "./types";
 
 //Load User
@@ -121,4 +122,10 @@ export const logout = () => (dispatch) => dispatch({ type: LOGOUT });
 export const clearErrors = () => (dispatch) =>
   dispatch({
     type: CLEAR_ERRORS,
+  });
+
+//Set Loading
+export const setLoading = () => (dispatch) =>
+  dispatch({
+    loading: SET_LOADING,
   });

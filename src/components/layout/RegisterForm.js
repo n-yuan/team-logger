@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { register, clearErrors } from "../../redux/actions/authAction";
+import { register } from "../../redux/actions/authAction";
 import { setAlert } from "../../redux/actions/alertAction";
 
 const RegisterForm = (props) => {

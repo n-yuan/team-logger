@@ -5,16 +5,16 @@ const loader = (
     version="1.1"
     id="L1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
     viewBox="0 0 100 100"
     enable-background="new 0 0 100 100"
-    xml:space="preserve"
+    xmlSpace="preserve"
   >
     <circle
       fill="none"
-      stroke="#fff"
+      stroke="#A1C4E3"
       stroke-width="6"
       stroke-miterlimit="15"
       stroke-dasharray="14.2472,14.2472"
@@ -34,7 +34,7 @@ const loader = (
     </circle>
     <circle
       fill="none"
-      stroke="#fff"
+      stroke="#A1C4E3"
       stroke-width="1"
       stroke-miterlimit="10"
       stroke-dasharray="10,10"
@@ -52,7 +52,7 @@ const loader = (
         repeatCount="indefinite"
       />
     </circle>
-    <g fill="#fff">
+    <g fill="#A1C4E3">
       <rect x="30" y="35" width="5" height="30">
         <animateTransform
           attributeName="transform"

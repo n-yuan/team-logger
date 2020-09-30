@@ -4,6 +4,7 @@ import LandingImage from "../images/Landing-img.svg";
 import RegisterForm from "../components/layout/RegisterForm";
 import LoginForm from "../components/layout/LoginForm";
 import Background from "../components/layout/Background";
+import Spinner from "../components/layout/Spinner";
 
 const Landing = (props) => {
   const [currentForm, setCurrentForm] = useState(null);
@@ -17,8 +18,27 @@ const Landing = (props) => {
   return (
     <div className="landing-page-wrapper">
       <Background />
+
       <div className="background-img-left-corner"></div>
       <Navbar onClick={onSetCurrentForm} />
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "100px",
+            height: "100px",
+            margin: "200px auto 0 auto",
+          }}
+        >
+          <Spinner />
+        </div>
+      </div>
       <div className="container landing-container">
         <div className="row">
           <div className="col-lg-6">
@@ -28,6 +48,7 @@ const Landing = (props) => {
               An <span style={{ color: "#A1C4E3" }}>Efficient</span> and{" "}
               <span style={{ color: "#A1C4E3" }}>simple </span>tool
             </h1>
+
             <p>
               Dedicated to improving team work experience and boosting
               productivity.
