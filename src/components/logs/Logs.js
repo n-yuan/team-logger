@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import LogItem from "./LogItems";
-import Preloader from "../layout/Preloader";
+import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
 import { getLogs } from "../../redux/actions/logActions";
-
 
 const Logs = ({ log: { logs, loading, filtered }, getLogs }) => {
   useEffect(() => {
@@ -12,15 +11,21 @@ const Logs = ({ log: { logs, loading, filtered }, getLogs }) => {
     // eslint-disable-next-line
   }, []);
 
-  if (loading || logs === null) {
-    return <Preloader />;
-  }
-
   return (
     <div className="logs-container">
       <div className="row">
-        {!loading && logs.length === 0 ? (
-          <p className="center">No logs to show...</p>
+        {loading || logs === null ? (
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              margin: "160px auto 0 auto",
+            }}
+          >
+            <Spinner />
+          </div>
+        ) : !loading && logs.length === 0 ? (
+          <p className="no-log-show">No logs to show...</p>
         ) : filtered !== null ? (
           filtered.map((log) => <LogItem log={log} key={log._id} />)
         ) : (
