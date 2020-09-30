@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { login, clearErrors } from "../../redux/actions/authAction";
+import { login, setLoading } from "../../redux/actions/authAction";
 import { setAlert } from "../../redux/actions/alertAction";
 
 const LoginForm = (props) => {
@@ -11,6 +11,7 @@ const LoginForm = (props) => {
     login,
     setAlert,
     clearErrors,
+    setLoading,
   } = props;
   useEffect(() => {
     if (isAuthenticated) {
@@ -37,6 +38,7 @@ const LoginForm = (props) => {
     if (email === "" || password === "") {
       setAlert("Please fill in all fields", "danger");
     } else {
+      setLoading();
       login({
         password,
         email,
@@ -93,4 +95,6 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { login, setAlert })(LoginForm);
+export default connect(mapStateToProps, { login, setAlert, setLoading })(
+  LoginForm
+);

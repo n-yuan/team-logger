@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { register } from "../../redux/actions/authAction";
+import { register, setLoading } from "../../redux/actions/authAction";
 import { setAlert } from "../../redux/actions/alertAction";
 
 const RegisterForm = (props) => {
@@ -11,6 +11,7 @@ const RegisterForm = (props) => {
     error,
     setAlert,
     clearErrors,
+    setLoading,
   } = props;
   useEffect(() => {
     if (isAuthenticated) {
@@ -41,6 +42,7 @@ const RegisterForm = (props) => {
     } else if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
+      setLoading();
       register({
         name,
         email,
@@ -130,4 +132,4 @@ const RegisterForm = (props) => {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
-export default connect(mapStateToProps, { register, setAlert })(RegisterForm);
+export default connect(mapStateToProps, { register, setAlert,setLoading })(RegisterForm);

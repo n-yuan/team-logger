@@ -127,5 +127,5 @@ export const clearErrors = () => (dispatch) =>
 //Set Loading
 export const setLoading = () => (dispatch) =>
   dispatch({
-    loading: SET_LOADING,
+    type: SET_LOADING,
   });

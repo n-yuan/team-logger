@@ -5,6 +5,8 @@ import RegisterForm from "../components/layout/RegisterForm";
 import LoginForm from "../components/layout/LoginForm";
 import Background from "../components/layout/Background";
 import Spinner from "../components/layout/Spinner";
+import { connect } from "react-redux";
+
 
 const Landing = (props) => {
   const [currentForm, setCurrentForm] = useState(null);
@@ -13,7 +15,7 @@ const Landing = (props) => {
     setCurrentForm(currentForm);
   };
 
-  const { history } = props;
+  const { history, loading } = props;
 
   return (
     <div className="landing-page-wrapper">
@@ -21,24 +23,27 @@ const Landing = (props) => {
 
       <div className="background-img-left-corner"></div>
       <Navbar onClick={onSetCurrentForm} />
-      <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          textAlign: "center",
-        }}
-      >
+      {loading === true && (
         <div
           style={{
-            width: "100px",
-            height: "100px",
-            margin: "200px auto 0 auto",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            textAlign: "center",
           }}
         >
-          <Spinner />
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              margin: "200px auto 0 auto",
+            }}
+          >
+            <Spinner />
+          </div>
         </div>
-      </div>
+      )}
+
       <div className="container landing-container">
         <div className="row">
           <div className="col-lg-6">
@@ -81,5 +86,7 @@ const Landing = (props) => {
     </div>
   );
 };
-
-export default Landing;
+const mapStateToProps = (state) => ({
+  loading: state.auth.loading,
+});
+export default connect(mapStateToProps)(Landing);
