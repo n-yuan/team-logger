@@ -16,10 +16,10 @@ const Navbar = (props) => {
   };
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-container">
+      <nav className={"navbar navbar-expand-lg navbar-container"}>
         <div className="container">
           {isAuthenticated ? (
-            <a href="/home" className="navbar-brand-home">
+            <a href="/" className="navbar-brand-home">
               <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
               Team Logger
             </a>
