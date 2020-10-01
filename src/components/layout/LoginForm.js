@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { login, setLoading } from "../../redux/actions/authAction";
+import { login, setLoading, clearErrors } from "../../redux/actions/authAction";
 import { setAlert } from "../../redux/actions/alertAction";
 
 const LoginForm = (props) => {
@@ -93,8 +93,12 @@ const LoginForm = (props) => {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  error: state.auth.error,
 });
 
-export default connect(mapStateToProps, { login, setAlert, setLoading })(
-  LoginForm
-);
+export default connect(mapStateToProps, {
+  login,
+  setAlert,
+  setLoading,
+  clearErrors,
+})(LoginForm);

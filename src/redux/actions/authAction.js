@@ -39,10 +39,19 @@ export const register = (formData) => async (dispatch) => {
     });
 
     const data = await res.json();
-    dispatch({
-      type: REGISTER_SUCCESS,
-      payload: data,
-    });
+    if (res.status === 400) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: data.msg,
+      });
+    }
+
+    if (data.token) {
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: data,
+      });
+    }
 
     // GET User data
     if (data.token) {
@@ -60,14 +69,11 @@ export const register = (formData) => async (dispatch) => {
         const data = await res.json();
         dispatch({ type: USER_LOADED, payload: data });
       } catch (error) {
-        dispatch({ type: AUTH_ERROR });
+        console.log("AUTH_ERROR");
       }
     }
   } catch (err) {
-    dispatch({
-      type: REGISTER_FAIL,
-      payload: err.response.data.msg,
-    });
+    console.log("REGISTER_FAIL");
   }
 };
 
@@ -82,6 +88,13 @@ export const login = (formData) => async (dispatch) => {
       },
     });
     const data = await res.json();
+    if (res.status === 400) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: data.msg,
+      });
+    }
+
     if (data.token) {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -104,14 +117,11 @@ export const login = (formData) => async (dispatch) => {
         const data = await res.json();
         dispatch({ type: USER_LOADED, payload: data });
       } catch (error) {
-        dispatch({ type: AUTH_ERROR });
+        console.log("AUTH_ERROR");
       }
     }
   } catch (err) {
-    dispatch({
-      type: LOGIN_FAIL,
-      payload: err.response.data.msg,
-    });
+    console.log("LOGIN_FAIL");
   }
 };
 

@@ -1,3 +1,6 @@
+body {
+  font-family: "Ubuntu", sans-serif; }
+
 .navbar-container .shadow {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.11); }
 .navbar-container .navbar-brand-landing {
@@ -131,7 +134,7 @@
   .landing-page-wrapper .landing-container h1 {
     color: #50ace5;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 43px;
     margin-top: 140px; }
   .landing-page-wrapper .landing-container p {
     color: #a1c4e3;
