@@ -7,9 +7,8 @@ import Background from "../components/layout/Background";
 import Spinner from "../components/layout/Spinner";
 import { connect } from "react-redux";
 
-
 const Landing = (props) => {
-  const [currentForm, setCurrentForm] = useState('landing-image');
+  const [currentForm, setCurrentForm] = useState("landing-image");
 
   const onSetCurrentForm = (currentForm) => {
     setCurrentForm(currentForm);
@@ -20,7 +19,6 @@ const Landing = (props) => {
   return (
     <div className="landing-page-wrapper">
       <Background />
-
       <div className="background-img-left-corner"></div>
       <Navbar onClick={onSetCurrentForm} />
       {loading === true && (
@@ -47,39 +45,44 @@ const Landing = (props) => {
       <div className="container landing-container">
         <div className="row">
           <div className="col-lg-6">
-            <h1>
-              Welcome to <span style={{ color: "#195CE8" }}>Team Logger</span>
-              : <br />
-              An <span style={{ color: "#A1C4E3" }}>Efficient</span> and{" "}
-              <span style={{ color: "#A1C4E3" }}>simple </span>tool
-            </h1>
-
-            <p>
-              Dedicated to improving team work experience and boosting
-              productivity.
-            </p>
-            <div className="intro-btn-container">
-              <button
-                className="intro-btn"
-                onClick={() => onSetCurrentForm("register")}
-              >
-                GET START
-              </button>
+            <div className="landing-info">
+              <h1>
+                Welcome to <span style={{ color: "#195CE8" }}>Team Logger</span>
+                : <br />
+                An <span style={{ color: "#A1C4E3" }}>Efficient</span> and{" "}
+                <span style={{ color: "#A1C4E3" }}>simple </span>tool
+              </h1>
+              <p>
+                Dedicated to improving team work experience and boosting
+                productivity.
+              </p>
+              <div className="intro-btn-container">
+                <button
+                  className="intro-btn"
+                  onClick={() => onSetCurrentForm("register")}
+                >
+                  GET START
+                </button>
+              </div>
+              <div className="background-img-work"></div>
             </div>
-            <div className="background-img-work"></div>
           </div>
           <div className="col-lg-6">
             {currentForm === "register" ? (
               <RegisterForm routeHistory={history} />
             ) : currentForm === "login" ? (
               <LoginForm routeHistory={history} />
-            ) :currentForm==='landing-image'? (
-              <img
-                src={LandingImage}
-                alt="landing-image"
-                className="landing-image"
-              />
-            ):<div/>}
+            ) : currentForm === "landing-image" ? (
+              <div>
+                <img
+                  src={LandingImage}
+                  alt="landing-image"
+                  className="landing-image"
+                />
+              </div>
+            ) : (
+              <div />
+            )}
           </div>
         </div>
       </div>

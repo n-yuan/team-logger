@@ -45,7 +45,7 @@ body {
   font-size: 18px;
   color: #50ace5;
   height: 35px;
-  margin: 13px 10px 10px 35px; }
+  margin: 13px 10px 10px 15px; }
   .navbar-container .nav-btn:focus {
     outline: 0;
     box-shadow: none;
@@ -62,7 +62,8 @@ body {
     margin-right: 3px; }
   .navbar-container .logout-item .logout-caption {
     color: #445360;
-    font-size: 18px; }
+    font-size: 18px;
+    cursor: pointer; }
   .navbar-container .logout-item .logout-greeting {
     display: inline-block;
     margin-right: 8px;
@@ -131,11 +132,30 @@ body {
   width: 100%;
   height: 100%;
   position: fixed; }
+  .landing-page-wrapper .landing-container .landing-info h1 {
+    color: #50ace5;
+    font-weight: 600;
+    font-size: 43px;
+    margin-top: 140px; }
+  @media screen and (max-width: 992px) {
+    .landing-page-wrapper .landing-container .landing-info {
+      margin: 0 70px; }
+      .landing-page-wrapper .landing-container .landing-info h1 {
+        color: #50ace5;
+        font-weight: 600;
+        font-size: 30px;
+        margin-top: 60px; } }
   .landing-page-wrapper .landing-container h1 {
     color: #50ace5;
     font-weight: 600;
     font-size: 43px;
     margin-top: 140px; }
+  @media screen and (max-width: 992px) {
+    .landing-page-wrapper .landing-container h1 {
+      color: #50ace5;
+      font-weight: 600;
+      font-size: 30px;
+      margin-top: 20px; } }
   .landing-page-wrapper .landing-container p {
     color: #a1c4e3;
     margin-right: 60px;

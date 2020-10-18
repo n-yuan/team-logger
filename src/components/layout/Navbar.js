@@ -20,9 +20,9 @@ const Navbar = (props) => {
     <div>
       <nav className={"navbar navbar-expand navbar-container"}>
         <div className="container">
-          <div className="d-none d-lg-block">
+          <div className="">
             {isAuthenticated ? (
-              <Link to="/" className="navbar-brand-home">
+              <Link to="/" className="navbar-brand-home d-none d-lg-block">
                 <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
                 Team Logger
               </Link>
@@ -65,7 +65,6 @@ const Navbar = (props) => {
                     </li>
                     <a
                       onClick={onLogout}
-                      href="#!"
                       className="logout-caption-container"
                     >
                       <i className="fas fa-sign-out-alt fa-lg"></i>
