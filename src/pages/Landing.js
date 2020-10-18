@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 
 
 const Landing = (props) => {
-  const [currentForm, setCurrentForm] = useState(null);
+  const [currentForm, setCurrentForm] = useState('landing-image');
 
   const onSetCurrentForm = (currentForm) => {
     setCurrentForm(currentForm);
@@ -73,13 +73,13 @@ const Landing = (props) => {
               <RegisterForm routeHistory={history} />
             ) : currentForm === "login" ? (
               <LoginForm routeHistory={history} />
-            ) : (
+            ) :currentForm==='landing-image'? (
               <img
                 src={LandingImage}
                 alt="landing-image"
                 className="landing-image"
               />
-            )}
+            ):<div/>}
           </div>
         </div>
       </div>

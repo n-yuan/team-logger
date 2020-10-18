@@ -34,7 +34,7 @@ const Banner = (props) => {
           <div className="banner-header">
             <h1 className="banner-greeting">Howdy,{user && user.name}!</h1>
             <p>You have {logs ? logs.length : 0} logs currently.</p>
-            <p>You have {attentionCount} urgent logs currently.</p>
+            <p>You have {attentionCount} urgent logs.</p>
           </div>
         </div>
         <div className="col-lg-6">

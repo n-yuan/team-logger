@@ -19,15 +19,19 @@ const Navbar = (props) => {
       <nav className={"navbar navbar-expand-lg navbar-container"}>
         <div className="container">
           {isAuthenticated ? (
-            <a href="/" className="navbar-brand-home">
+            <Link to="/" className="navbar-brand-home">
               <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
               Team Logger
-            </a>
+            </Link>
           ) : (
-            <a href="/landing" className="navbar-brand-landing">
+            <Link
+              to="/landing"
+              className="navbar-brand-landing"
+              onClick={() => props.onClick("landing-image")}
+            >
               <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
               Team Logger
-            </a>
+            </Link>
           )}
 
           <div className="collapse navbar-collapse" id="navbarResponsive">
@@ -67,20 +71,14 @@ const Navbar = (props) => {
             ) : (
               <ul className="navbar-nav ml-auto nav-home">
                 <li className="nav-item">
-                  <a
-                    href=""
+                  <Link
+                    to="/landing"
                     className="nav-link"
                     onClick={() => props.onClick("landing-image")}
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
-                {/* Hide Contact Us */}
-                {/* <li className="nav-item">
-                  <a href="" className="nav-link">
-                    Contact us
-                  </a>
-                </li> */}
                 <button
                   className="nav-btn"
                   onClick={() => props.onClick("login")}
