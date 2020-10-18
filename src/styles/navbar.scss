@@ -40,15 +40,15 @@
     .nav-link {
       color: rgb(68, 83, 96);
       margin: 5px 20px;
-      font-size: 23px;
+      font-size: 20px;
       font-weight: 400;
     }
   }
   .nav-home {
     .nav-link {
       color: $primaryColor;
-      margin: 5px 35px;
-      font-size: 23px;
+      margin: 6px 35px;
+      font-size: 20px;
       font-weight: 400;
     }
   }
@@ -60,7 +60,7 @@
     font-size: 18px;
     color: $primaryColor;
     height: 35px;
-    margin: 10px 10px 10px 35px;
+    margin: 13px 10px 10px 35px;
     &:focus {
       outline: 0;
       box-shadow: none;
@@ -78,7 +78,6 @@
         text-decoration: none;
       }
     }
-
     .fa-sign-out-alt {
       color: rgb(68, 83, 96);
       margin-right: 3px;

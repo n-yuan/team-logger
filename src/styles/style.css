@@ -30,12 +30,12 @@ body {
 .navbar-container .nav-log-member .nav-link {
   color: #445360;
   margin: 5px 20px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 400; }
 .navbar-container .nav-home .nav-link {
   color: #50ace5;
-  margin: 5px 35px;
-  font-size: 23px;
+  margin: 6px 35px;
+  font-size: 20px;
   font-weight: 400; }
 .navbar-container .nav-btn {
   border: 2px solid #50ace5;
@@ -45,7 +45,7 @@ body {
   font-size: 18px;
   color: #50ace5;
   height: 35px;
-  margin: 10px 10px 10px 35px; }
+  margin: 13px 10px 10px 35px; }
   .navbar-container .nav-btn:focus {
     outline: 0;
     box-shadow: none;

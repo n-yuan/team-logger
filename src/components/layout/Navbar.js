@@ -11,9 +11,11 @@ const Navbar = (props) => {
     logout,
     auth: { user },
   } = props;
+
   const onLogout = () => {
     logout();
   };
+
   return (
     <div>
       <nav className={"navbar navbar-expand navbar-container"}>
@@ -57,7 +59,9 @@ const Navbar = (props) => {
                 <div className="logout-item">
                   <li>
                     <li className="logout-greeting">
-                      <div className='d-none d-lg-block'>Hello {user && user.name}</div>
+                      <div className="d-none d-lg-block">
+                        Hello {user && user.name}
+                      </div>
                     </li>
                     <a
                       onClick={onLogout}
