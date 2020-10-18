@@ -16,23 +16,25 @@ const Navbar = (props) => {
   };
   return (
     <div>
-      <nav className={"navbar navbar-expand-lg navbar-container"}>
+      <nav className={"navbar navbar-expand navbar-container"}>
         <div className="container">
-          {isAuthenticated ? (
-            <Link to="/" className="navbar-brand-home">
-              <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
-              Team Logger
-            </Link>
-          ) : (
-            <Link
-              to="/landing"
-              className="navbar-brand-landing"
-              onClick={() => props.onClick("landing-image")}
-            >
-              <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
-              Team Logger
-            </Link>
-          )}
+          <div className="d-none d-lg-block">
+            {isAuthenticated ? (
+              <Link to="/" className="navbar-brand-home">
+                <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
+                Team Logger
+              </Link>
+            ) : (
+              <Link
+                to="/landing"
+                className="navbar-brand-landing"
+                onClick={() => props.onClick("landing-image")}
+              >
+                <img src={Logo} alt="logo-pic" style={{ width: "55px" }} />
+                Team Logger
+              </Link>
+            )}
+          </div>
 
           <div className="collapse navbar-collapse" id="navbarResponsive">
             {isAuthenticated && (
@@ -55,7 +57,7 @@ const Navbar = (props) => {
                 <div className="logout-item">
                   <li>
                     <li className="logout-greeting">
-                      Hello {user && user.name}
+                      <div className='d-none d-lg-block'>Hello {user && user.name}</div>
                     </li>
                     <a
                       onClick={onLogout}
